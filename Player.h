@@ -9,9 +9,9 @@ public:
 	virtual ~Player( );
 public:
 	void update( );
+	void draw( );
 private:
 	void act( );
-	void draw( );
 private:
 	ImagePtr _image;
 };

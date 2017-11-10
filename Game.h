@@ -17,7 +17,7 @@ public:
 	static GamePtr getTask( );
 public:
 	void update( );
-	void run( );
+	//void run( );
 private:
 	ScenePlayPtr _scene_play;
 };

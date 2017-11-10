@@ -14,10 +14,11 @@ Game::~Game( ) {
 }
 
 void Game::update( ) {
-	run( );
-}
-
-void Game::run( ) {
 	_scene_play->update( );
 	_scene_play->draw( );
 }
+
+//void Game::run( ) {
+//	_scene_play->update( );
+//	_scene_play->draw( );
+//}
