@@ -23,7 +23,7 @@ void Game::initialize( ) {
 
 void Game::update( ) {
 	Drawer::getTask( )->flip( );
-	_scene->update( );
+	_next = _scene->update( );
 	_scene->draw( );
 	changeScene( );
 }

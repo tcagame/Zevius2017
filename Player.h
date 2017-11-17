@@ -1,9 +1,11 @@
 #pragma once
 #include "smart_ptr.h"
+#include "mathmatics.h"
+#include "Character.h"
 
 PTR( Image );
 
-class Player {
+class Player : public Character {
 public:
 	Player( );
 	virtual ~Player( );
@@ -14,5 +16,6 @@ private:
 	void act( );
 private:
 	ImagePtr _image;
+	Vector _pos;
 };
 
