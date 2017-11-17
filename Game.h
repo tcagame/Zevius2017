@@ -2,11 +2,10 @@
 
 #include "Task.h"
 #include <string>
-
-#include "ScenePlay.h"
+#include "Scene.h"
 
 PTR( Game );
-PTR( ScenePlay );
+PTR( Scene );
 
 class Game : public Task {
 public:
@@ -17,8 +16,11 @@ public:
 	static GamePtr getTask( );
 public:
 	void update( );
-	//void run( );
+	void changeScene( );
 private:
-	ScenePlayPtr _scene_play;
+	void initialize( );
+private:
+	ScenePtr _scene;
+	Scene::NEXT_SCENE _next;
 };
 

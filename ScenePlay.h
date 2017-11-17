@@ -1,15 +1,16 @@
 #pragma once
 #include "smart_ptr.h"
+#include "Scene.h"
 #include "Player.h"
 
 PTR( Player );
 
-class ScenePlay {
+class ScenePlay : public Scene {
 public:
 	ScenePlay( );
 	virtual ~ScenePlay( );
-public:
-	void update( );
+private:
+	NEXT_SCENE update( );
 	void draw( );
 private:
 	PlayerPtr _player;

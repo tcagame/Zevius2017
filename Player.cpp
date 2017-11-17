@@ -2,12 +2,12 @@
 #include "Drawer.h"
 #include "Image.h"
 
-const int PLAYER_START_X = 0;
-const int PLAYER_START_Y = 0;
+const int PLAYER_START_X = 20;
+const int PLAYER_START_Y = 20;
 
 Player::Player( ) {
 	DrawerPtr drawer = Drawer::getTask( );
-	_image = drawer->createImage( "resouces/player/sol_valou.png" );
+	_image = drawer->createImage( "player/sol_valou.png" );
 }
 
 

@@ -5,11 +5,15 @@
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="ScenePlay.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Character.cpp" />
+    <ClCompile Include="Scene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h" />
     <ClInclude Include="ScenePlay.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="define.h" />
+    <ClInclude Include="Character.h" />
+    <ClInclude Include="Scene.h" />
   </ItemGroup>
 </Project>
