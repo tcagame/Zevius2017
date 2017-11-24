@@ -1,6 +1,7 @@
 #include "Game.h"
 #include "Application.h"
 #include "Scene.h"
+#include "SceneTitle.h"
 #include "ScenePlay.h"
 #include "Drawer.h"
 
@@ -10,7 +11,8 @@ GamePtr Game::getTask( ) {
 }
 
 Game::Game( ) :
-_next( Scene::NEXT_PLAY ){
+_next( Scene::NEXT_TITLE ),
+_count( 0 ) {
 }
 
 
@@ -22,6 +24,8 @@ void Game::initialize( ) {
 }
 
 void Game::update( ) {
+	_count++;
+
 	Drawer::getTask( )->flip( );
 	_next = _scene->update( );
 	_scene->draw( );
@@ -33,7 +37,15 @@ void Game::changeScene( ) {
 		return;
 	}
 	switch( _next ) {
+	case Scene::NEXT_TITLE:
+		_scene = ScenePtr( new SceneTitle( ) );
+		break;
 	case Scene::NEXT_PLAY:
 		_scene = ScenePtr( new ScenePlay( ) );
+		break;
 	}
+}
+
+int Game::getGameCount( ) {
+	return _count;
 }

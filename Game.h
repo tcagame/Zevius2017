@@ -17,10 +17,12 @@ public:
 public:
 	void update( );
 	void changeScene( );
+	int getGameCount( );
 private:
 	void initialize( );
 private:
 	ScenePtr _scene;
 	Scene::NEXT_SCENE _next;
+	int _count;
 };
 
