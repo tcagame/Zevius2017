@@ -2,10 +2,10 @@
 #include "Drawer.h"
 #include "Image.h"
 
-
+const Vector SHOT_SPEED( 5, 0 );
 
 PlayerShot::PlayerShot( Vector pos ) :
-_pos( pos ) {
+Character( pos, 16 ) {
 	DrawerPtr drawer = Drawer::getTask( );
 	_image = drawer->createImage( "player/shot.png" );
 }
@@ -14,11 +14,14 @@ _pos( pos ) {
 PlayerShot::~PlayerShot( ) {
 }
 
-void PlayerShot::update( ) {
- 	_pos.x++;
+void PlayerShot::act( ) {
+ 	Vector vec;
+	vec += SHOT_SPEED;
+	setVec( vec );
 }
 
 void PlayerShot::draw( ) {
-	_image->setPos( _pos.x, _pos.y );
+	Vector pos = getPos( );
+	_image->setPos( pos.x, pos.y );
 	_image->draw( );
 }

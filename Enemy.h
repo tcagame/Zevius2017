@@ -2,7 +2,7 @@
 #include "Character.h"
 class Enemy : public Character {
 public:
-	Enemy( );
+	Enemy( const Vector& pos, double radius, int score );
 	virtual ~Enemy( );
 };
 

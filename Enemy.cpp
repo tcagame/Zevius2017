@@ -1,8 +1,7 @@
 #include "Enemy.h"
 
-
-
-Enemy::Enemy( ) {
+Enemy::Enemy( const Vector& pos , double radius, int score ) :
+Character( pos, radius ){
 }
 
 

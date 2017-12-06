@@ -2,7 +2,9 @@
 
 
 
-Character::Character( ) {
+Character::Character( const Vector& pos, const double radius ) :
+_pos( pos ),
+_radius( radius ) {
 
 }
 
@@ -10,3 +12,36 @@ Character::Character( ) {
 Character::~Character( ) {
 
 }
+
+void Character::update( ) {
+	act( );
+	_pos += _vec;
+}
+
+Vector Character::getPos( ) {
+	return _pos;
+}
+
+Vector Character::getVec( ) {
+	return _vec;
+}
+
+double Character::getRadius( ) {
+	return _radius;
+}
+
+
+void Character::setVec( const Vector& vec ) {
+	_vec = vec;
+}
+
+bool Character::isOverLapped( CharacterPtr target ) {
+	bool result = false;
+	
+	if ( ( _pos - target->getPos( ) ).getLength( ) < _radius + target->getRadius( ) ) {
+		result = true;
+	}
+
+	return result;
+}
+
