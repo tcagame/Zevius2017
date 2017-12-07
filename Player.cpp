@@ -33,6 +33,11 @@ Character( START_POS, RADIUS ){
 Player::~Player( ) {
 }
 
+void Player::init( ScenePlayPtr play ) {
+	_play = play;
+}
+
+
 void Player::act( ) {
 	DevicePtr device = Device::getTask( );
 	KeyboardPtr keyboard = Keyboard::getTask( );
@@ -69,7 +74,7 @@ void Player::act( ) {
 	setVec( vec );
 	//プレイヤー攻撃
 	if ( keyboard->isPushKey( "SPACE" ) ) {
-		PlayerShotPtr shot = PlayerShotPtr( new PlayerShot( getPos( ) ) );
+		_play->addShot( PlayerShotPtr( new PlayerShot( getPos( ) ) ) );
 	}
 	//デバッグ用
 	Drawer::getTask( )->drawString( 0, 100, "x:%lf y:%lf", pos.x, pos.y );
@@ -77,6 +82,6 @@ void Player::act( ) {
 
 void Player::draw( ) {
 	Vector pos = getPos( );
-	_image->setPos( pos.x, pos.y, pos.x + CHARACTER_SIZE, pos.y + CHARACTER_SIZE );
+	_image->setPos( ( int )pos.x, ( int )pos.y, ( int )pos.x + CHARACTER_SIZE, ( int )pos.y + CHARACTER_SIZE );
 	_image->draw( );
 }

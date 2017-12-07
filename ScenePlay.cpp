@@ -4,11 +4,13 @@
 #include "Image.h"
 #include "Game.h"
 #include "smart_ptr.h"
+#include "PlayerShot.h"
 
 const int MAP_SIZE = 3000;
 
 ScenePlay::ScenePlay( ) {
-	_player = PlayerPtr( new Player );
+	_init = false;
+	_player = PlayerPtr( new Player( ) );
 	DrawerPtr drawer = Drawer::getTask( );
 	_image = drawer->createImage( "background/background.png" );
 }
@@ -18,7 +20,14 @@ ScenePlay::~ScenePlay( ) {
 }
 
 Scene::NEXT_SCENE ScenePlay::update( ) {
+	if ( !_init ) {
+		_player->init( std::dynamic_pointer_cast< ScenePlay >( shared_from_this( ) ) );
+		_init = true;
+	}
 	_player->update( );
+	for ( PlayerShotPtr shot : _shots ) {
+		shot->update( );
+	}
 	return Scene::NEXT_CONTINUE;
 }
 
@@ -32,10 +41,14 @@ void ScenePlay::draw( ) {
 	int x2 = x1 + MAP_SIZE;
 	int x3 = x2 + MAP_SIZE;
 	_image->setPos( x1, 0, x2, 810 );
-	//_image->draw( );//”wŒi
+	_image->draw( );//”wŒi
 	_image->setPos( x2, 0, x3, 810 );
-	//_image->draw( );//”wŒi
+	_image->draw( );//”wŒi
 	_player->draw( );
+
+	for ( PlayerShotPtr shot : _shots ) {
+		shot->draw( );
+	}
 }
 
 void ScenePlay::addShot( PlayerShotPtr shot ) {

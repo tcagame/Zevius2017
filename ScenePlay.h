@@ -18,6 +18,7 @@ private:
 	NEXT_SCENE update( );
 	void draw( );
 private:
+	bool _init;
 	PlayerPtr _player;
 	ImagePtr _image;
 	std::list< PlayerShotPtr > _shots;

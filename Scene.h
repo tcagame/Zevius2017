@@ -1,5 +1,7 @@
 #pragma once
-class Scene {
+#include <memory>
+
+class Scene : public std::enable_shared_from_this< Scene > {
 public:
 	enum NEXT_SCENE {
 		NEXT_TITLE,
