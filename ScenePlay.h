@@ -5,22 +5,20 @@
 #include <list>
 
 PTR( Player );
-PTR( PlayerShot );
+PTR( Military );
 PTR( Image );
 
 class ScenePlay : public Scene {
 public:
 	ScenePlay( );
 	virtual ~ScenePlay( );
-public:
-	void addShot( PlayerShotPtr shot );
 private:
 	NEXT_SCENE update( );
 	void draw( );
 private:
 	bool _init;
 	PlayerPtr _player;
+	MilitaryPtr _military;
 	ImagePtr _image;
-	std::list< PlayerShotPtr > _shots;
 };
 

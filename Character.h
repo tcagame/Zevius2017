@@ -15,9 +15,9 @@ public:
 	double getRadius( );
 	Vector getPos( );
 	Vector getVec( );
+	bool isOverLapped( CharacterPtr target );
 protected:
 	void setVec( const Vector& vec );
-	bool isOverLapped( CharacterPtr target );
 private:
 	Vector _pos;
 	Vector _vec;

@@ -156,10 +156,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Armoury.cpp" />
     <ClCompile Include="Character.cpp" />
     <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="EnemyTorkan.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Military.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayerShot.cpp" />
     <ClCompile Include="Scene.cpp" />
@@ -172,10 +175,13 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Armoury.h" />
     <ClInclude Include="Character.h" />
     <ClInclude Include="define.h" />
     <ClInclude Include="Enemy.h" />
+    <ClInclude Include="EnemyTorkan.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="Military.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayerShot.h" />
     <ClInclude Include="Scene.h" />

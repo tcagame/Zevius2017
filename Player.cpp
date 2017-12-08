@@ -6,6 +6,7 @@
 #include "Keyboard.h"
 #include "define.h"
 #include "ScenePlay.h"
+#include "Armoury.h"
 
 //プレイヤーの初期位置
 const double START_X = 50;
@@ -21,6 +22,7 @@ const int RADIUS = 32;
 
 Player::Player( ) :
 Character( START_POS, RADIUS ){
+	_armoury = ArmouryPtr( new Armoury( ) );
 	DrawerPtr drawer = Drawer::getTask( );
 	_image = drawer->createImage( "player/sol_valou.png" );
 	int width = 0;
@@ -33,12 +35,14 @@ Character( START_POS, RADIUS ){
 Player::~Player( ) {
 }
 
-void Player::init( ScenePlayPtr play ) {
-	_play = play;
-}
-
 
 void Player::act( ) {
+	actOnMove( );
+	actOnAttack( );
+	_armoury->update( );
+}
+
+void Player::actOnMove( ) {
 	DevicePtr device = Device::getTask( );
 	KeyboardPtr keyboard = Keyboard::getTask( );
 	Vector vec;
@@ -70,18 +74,21 @@ void Player::act( ) {
 	if ( pos.y + vec.y >= MAX_MOVE_Y ) {
 		vec.y = MAX_MOVE_Y - pos.y;
 	}
-
-	setVec( vec );
-	//プレイヤー攻撃
-	if ( keyboard->isPushKey( "SPACE" ) ) {
-		_play->addShot( PlayerShotPtr( new PlayerShot( getPos( ) ) ) );
-	}
-	//デバッグ用
+	
 	Drawer::getTask( )->drawString( 0, 100, "x:%lf y:%lf", pos.x, pos.y );
+	setVec( vec );
+}
+
+void Player::actOnAttack( ) {
+	KeyboardPtr keyboard = Keyboard::getTask( );
+	if ( keyboard->isPushKey( "SPACE" ) ) {
+		_armoury->addShot( PlayerShotPtr( new PlayerShot( getPos( ) ) ) );
+	}
 }
 
 void Player::draw( ) {
 	Vector pos = getPos( );
 	_image->setPos( ( int )pos.x, ( int )pos.y, ( int )pos.x + CHARACTER_SIZE, ( int )pos.y + CHARACTER_SIZE );
 	_image->draw( );
+	_armoury->draw( );
 }

@@ -1,5 +1,6 @@
 #include "ScenePlay.h"
 #include "Player.h"
+#include "Military.h"
 #include "Drawer.h"
 #include "Image.h"
 #include "Game.h"
@@ -11,6 +12,7 @@ const int MAP_SIZE = 3000;
 ScenePlay::ScenePlay( ) {
 	_init = false;
 	_player = PlayerPtr( new Player( ) );
+	_military = MilitaryPtr( new Military( _player ) );
 	DrawerPtr drawer = Drawer::getTask( );
 	_image = drawer->createImage( "background/background.png" );
 }
@@ -20,14 +22,7 @@ ScenePlay::~ScenePlay( ) {
 }
 
 Scene::NEXT_SCENE ScenePlay::update( ) {
-	if ( !_init ) {
-		_player->init( std::dynamic_pointer_cast< ScenePlay >( shared_from_this( ) ) );
-		_init = true;
-	}
 	_player->update( );
-	for ( PlayerShotPtr shot : _shots ) {
-		shot->update( );
-	}
 	return Scene::NEXT_CONTINUE;
 }
 
@@ -46,11 +41,4 @@ void ScenePlay::draw( ) {
 	_image->draw( );//”wŒi
 	_player->draw( );
 
-	for ( PlayerShotPtr shot : _shots ) {
-		shot->draw( );
-	}
-}
-
-void ScenePlay::addShot( PlayerShotPtr shot ) {
-	_shots.push_back( shot );
 }

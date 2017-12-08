@@ -18,6 +18,11 @@
       <Filter>Scene</Filter>
     </ClCompile>
     <ClCompile Include="PlayerShot.cpp" />
+    <ClCompile Include="Military.cpp" />
+    <ClCompile Include="Armoury.cpp" />
+    <ClCompile Include="EnemyTorkan.cpp">
+      <Filter>Enemy</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h" />
@@ -37,6 +42,11 @@
       <Filter>Scene</Filter>
     </ClInclude>
     <ClInclude Include="PlayerShot.h" />
+    <ClInclude Include="Military.h" />
+    <ClInclude Include="Armoury.h" />
+    <ClInclude Include="EnemyTorkan.h">
+      <Filter>Enemy</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Enemy">

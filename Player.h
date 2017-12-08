@@ -5,20 +5,21 @@
 #include "mathmatics.h"
 
 PTR( Image );
-PTR( ScenePlay )
+PTR( Armoury );
 
 class Player : public Character {
 public:
 	Player( );
 	virtual ~Player( );
 public:
-	void init( ScenePlayPtr play );
 	void draw( );
 private:
 	void act( );
+	void actOnMove( );
+	void actOnAttack( );
 private:
 	ImagePtr _image;
-	ScenePlayPtr _play;
+	ArmouryPtr _armoury;
 	Vector _pos;
 };
 
