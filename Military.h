@@ -6,6 +6,7 @@ PTR( Enemy );
 PTR( Player );
 PTR( EnemyTorkan );
 PTR( EnemyGaruzakato );
+PTR( EnemyBozalogram );
 
 class Military {
 public:
