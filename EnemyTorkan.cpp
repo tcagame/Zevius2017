@@ -3,11 +3,14 @@
 #include "Drawer.h"
 #include "define.h"
 
-const Vector ATTACK_POS( 50, 0 );
 const Vector T_VEC( -3, 0 );
+const Vector REMOVE_POS( 300, 0 );
+const Vector REMOVE_VEC( 3, 3 );
+const double HARF_POS = 400;
 
 EnemyTorkan::EnemyTorkan( const Vector& pos ) :
-Enemy( pos, 32, 500 ) {
+Enemy( pos, 32, 500 ),
+_remove( false ){
 	DrawerPtr drawer = Drawer::getTask( );
 	_image = drawer->createImage( "enemy/enemy.png" );
 }
@@ -17,9 +20,19 @@ EnemyTorkan::~EnemyTorkan( ) {
 }
 
 void EnemyTorkan::act( ) {
-	Vector vec;
-	vec += T_VEC;
-	setVec( T_VEC );
+	Vector pos = getPos( );
+	Vector vec = T_VEC;
+	if ( pos.x < REMOVE_POS.x && _remove == false ) {
+		_remove = true;
+	}
+	if ( _remove == true ) {
+		vec = REMOVE_VEC;
+	}
+	if ( pos.y > HARF_POS ) {
+		vec.y *= -1;
+	}
+
+	setVec( vec );
 
 	draw( );
 }

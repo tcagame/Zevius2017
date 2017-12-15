@@ -14,5 +14,6 @@ private:
 private:
 	ImagePtr _image;
 	Vector _pos;
+	bool _remove;
 };
 
