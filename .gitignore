@@ -4,3 +4,4 @@ Debug/vc140.idb
 Debug/
 Log.txt
 *.suo
+*.db

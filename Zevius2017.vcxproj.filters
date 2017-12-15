@@ -23,6 +23,18 @@
     <ClCompile Include="EnemyTorkan.cpp">
       <Filter>Enemy</Filter>
     </ClCompile>
+    <ClCompile Include="EnemyBragzakato.cpp">
+      <Filter>Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyGaruzakato.cpp">
+      <Filter>Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyToroid.cpp">
+      <Filter>Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyBozalogram.cpp">
+      <Filter>Enemy</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h" />
@@ -45,6 +57,18 @@
     <ClInclude Include="Military.h" />
     <ClInclude Include="Armoury.h" />
     <ClInclude Include="EnemyTorkan.h">
+      <Filter>Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyBozalogram.h">
+      <Filter>Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyBragzakato.h">
+      <Filter>Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyGaruzakato.h">
+      <Filter>Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyToroid.h">
       <Filter>Enemy</Filter>
     </ClInclude>
   </ItemGroup>

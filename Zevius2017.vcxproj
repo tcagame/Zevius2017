@@ -159,7 +159,11 @@
     <ClCompile Include="Armoury.cpp" />
     <ClCompile Include="Character.cpp" />
     <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="EnemyBozalogram.cpp" />
+    <ClCompile Include="EnemyBragzakato.cpp" />
+    <ClCompile Include="EnemyGaruzakato.cpp" />
     <ClCompile Include="EnemyTorkan.cpp" />
+    <ClCompile Include="EnemyToroid.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Military.cpp" />
@@ -179,7 +183,11 @@
     <ClInclude Include="Character.h" />
     <ClInclude Include="define.h" />
     <ClInclude Include="Enemy.h" />
+    <ClInclude Include="EnemyBozalogram.h" />
+    <ClInclude Include="EnemyBragzakato.h" />
+    <ClInclude Include="EnemyGaruzakato.h" />
     <ClInclude Include="EnemyTorkan.h" />
+    <ClInclude Include="EnemyToroid.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Military.h" />
     <ClInclude Include="Player.h" />

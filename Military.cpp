@@ -4,11 +4,11 @@
 #include "Enemy.h"
 #include "EnemyTorkan.h"
 
-const Vector T_POS( 500, 500 );
+const Vector T_POS( 1200, 400 );
 
 Military::Military( PlayerPtr player ) {
 	_player = player;
-	_enemies.push_back( EnemyTorkanPtr( new EnemyTorkan( T_POS ) ) );
+	addEnemy( EnemyTorkanPtr( new EnemyTorkan( T_POS ) ) );
 }
 
 
