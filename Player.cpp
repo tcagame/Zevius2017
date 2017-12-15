@@ -81,7 +81,7 @@ void Player::actOnMove( ) {
 
 void Player::actOnAttack( ) {
 	KeyboardPtr keyboard = Keyboard::getTask( );
-	if ( keyboard->isPushKey( "SPACE" ) ) {
+	if ( keyboard->isPushKey( "Z" ) ) {
 		_armoury->addShot( PlayerShotPtr( new PlayerShot( getPos( ) ) ) );
 	}
 }
