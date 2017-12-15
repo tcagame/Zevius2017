@@ -3,9 +3,10 @@
 #include "Drawer.h"
 #include "define.h"
 #include "Player.h"
+#include "Time.h"
 
-const double GARUZA_VEC = 2;
-
+const double GARUZA_VEC = 3;
+const int time = 10;
 
 EnemyGaruzakato::EnemyGaruzakato( const Vector& pos, PlayerPtr player ) :
 Enemy( pos, 32 , 30 ) {
@@ -23,7 +24,10 @@ void EnemyGaruzakato::act( ) {
 	Vector pos = getPos( );
 	Vector dir = ( target_pos - pos ).normalize( );
 	Vector vec = dir * GARUZA_VEC;
-
+	
+	if( time == 0 ) {
+		double GARUZA_VEC = -10;
+	}
 
 	setVec( vec );
 	draw( );
