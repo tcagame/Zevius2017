@@ -28,9 +28,6 @@ void EnemyTorkan::act( ) {
 	if ( _remove == true ) {
 		vec = REMOVE_VEC;
 	}
-	if ( pos.y > HARF_POS ) {
-		vec.y *= -1;
-	}
 
 	setVec( vec );
 

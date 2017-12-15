@@ -4,7 +4,8 @@
 
 PTR( Enemy );
 PTR( Player );
-PTR( EnemyTorkan )
+PTR( EnemyTorkan );
+PTR( EnemyGaruzakato );
 
 class Military {
 public:
