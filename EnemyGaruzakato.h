@@ -1,10 +1,11 @@
 #pragma once
 #include "Enemy.h"
-class EnemyGaruzakato:
-	public Enemy
-{
+class EnemyGaruzakato : public Enemy {
 public:
-	EnemyGaruzakato();
-	virtual ~EnemyGaruzakato();
+	EnemyGaruzakato( );
+	virtual ~EnemyGaruzakato( );
+private:
+	void act( );
+	void draw( );
 };
 

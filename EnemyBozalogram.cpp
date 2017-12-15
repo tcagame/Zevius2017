@@ -3,9 +3,19 @@
 
 
 EnemyBozalogram::EnemyBozalogram( ) :
-Enemy( getPos( ), 32 , 30 ){
+Enemy( getPos( ), 32 , 30 ) {
+
 }
 
 
 EnemyBozalogram::~EnemyBozalogram( ) {
+
+}
+
+void EnemyBozalogram::act( ) {
+
+}
+
+void EnemyBozalogram::draw( ) {
+
 }

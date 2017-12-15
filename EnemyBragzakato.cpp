@@ -2,12 +2,20 @@
 
 
 
-EnemyBragzakato::EnemyBragzakato() :
-Enemy( getPos( ), 32 , 30 )
-{
+EnemyBragzakato::EnemyBragzakato( ) :
+Enemy( getPos( ), 32 , 30 ) {
+
 }
 
 
-EnemyBragzakato::~EnemyBragzakato()
-{
+EnemyBragzakato::~EnemyBragzakato( ) {
+
+}
+
+void EnemyBragzakato::act( ) {
+
+}
+
+void EnemyBragzakato::draw( ) {
+
 }

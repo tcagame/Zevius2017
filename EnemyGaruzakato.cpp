@@ -2,12 +2,18 @@
 
 
 
-EnemyGaruzakato::EnemyGaruzakato() :
-Enemy( getPos( ), 32 , 30 )
-{
+EnemyGaruzakato::EnemyGaruzakato( ) :
+Enemy( getPos( ), 32 , 30 ) {
 }
 
 
-EnemyGaruzakato::~EnemyGaruzakato()
-{
+EnemyGaruzakato::~EnemyGaruzakato( ) {
+}
+
+void EnemyGaruzakato::act( ) {
+
+}
+
+void EnemyGaruzakato::draw( ) {
+
 }
