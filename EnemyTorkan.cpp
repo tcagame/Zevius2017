@@ -3,6 +3,8 @@
 #include "Drawer.h"
 #include "define.h"
 
+//¼“c
+
 const Vector T_VEC( -3, 0 );
 const Vector REMOVE_POS( 300, 0 );
 const Vector REMOVE_VEC( 3, 3 );
@@ -35,8 +37,7 @@ void EnemyTorkan::act( ) {
 }
 
 void EnemyTorkan::draw( ) {
-	Vector pos = getPos( );
 	_image->setRect( NORMAL_GRAPH_SIZE * 2, 0, NORMAL_GRAPH_SIZE, NORMAL_GRAPH_SIZE );
-	_image->setPos( pos.x, pos.y );
+	_image->setPos( getPos( ).x, getPos( ).y );
 	_image->draw( );
 }

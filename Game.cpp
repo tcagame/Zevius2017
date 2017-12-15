@@ -27,8 +27,8 @@ void Game::update( ) {
 	_count++;
 
 	Drawer::getTask( )->flip( );
-	_next = _scene->update( );
 	_scene->draw( );
+	_next = _scene->update( );
 	changeScene( );
 }
 

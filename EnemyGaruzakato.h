@@ -15,5 +15,6 @@ private:
 private:
 	ImagePtr _image;
 	PlayerPtr _player;
+	int _time;
 };
 
