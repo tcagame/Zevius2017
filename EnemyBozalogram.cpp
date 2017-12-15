@@ -3,6 +3,8 @@
 #include "Drawer.h"
 #include "define.h"
 
+//çÇìá
+
 const Vector MOVE_SPEED( -1, 0 );
 const double RANGE_UP = 200;
 const double RANGE_DOWN = 600;

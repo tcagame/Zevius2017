@@ -5,6 +5,7 @@
 #include "Player.h"
 #include "Time.h"
 
+//ŠÔ‹{
 const double GARUZA_VEC = 3;
 const int TIMER = 500;
 
@@ -27,10 +28,6 @@ void EnemyGaruzakato::act( ) {
 	Vector pos = getPos( );
 	Vector dir = ( target_pos - pos ).normalize( );
 	Vector vec = dir * GARUZA_VEC;
-	
-	if( time == 0 ) {
-		double GARUZA_VEC = -10;
-	}
 
 	setVec( vec );
 	draw( );

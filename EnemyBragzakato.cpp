@@ -2,24 +2,46 @@
 #include "Image.h"
 #include "Drawer.h"
 #include "define.h"
+#include "Player.h"
 
-const Vector ATTACK_POS( 50, 0 );
-const Vector T_VEC( -3, 0 );
+//山蔭
+const double BRAGZAKATO_VEC = 2;
+const double ATTACK_RANGE = 100;
 
-EnemyBragzakato::EnemyBragzakato( const Vector& pos ) :
-Enemy( pos, 32, 500 ) {
+EnemyBragzakato::EnemyBragzakato( const Vector& pos, PlayerPtr player ) :
+Enemy( pos, 32, 500 ),
+_attack( false ),
+_count( 0 ) {
+	_player = player;
 	DrawerPtr drawer = Drawer::getTask( );
 	_image = drawer->createImage( "enemy/enemy.png" );
 }
 
    
 EnemyBragzakato::~EnemyBragzakato( ) {
+
 }
 
 void EnemyBragzakato::act( ) {
-	Vector vec;
-	vec += T_VEC;
-	setVec( T_VEC );
+	Vector target_pos = _player->getPos( );
+	Vector pos = getPos( );
+	Vector dir = ( target_pos - pos ).normalize( );
+	Vector vec = dir * BRAGZAKATO_VEC;
+
+	setVec( vec );
+	if ( ( target_pos - pos ).getLength( ) < ATTACK_RANGE ) {
+		_attack = true;
+		//炸裂するよ
+	}
+	if ( _attack ) {
+		_count++;
+		setVec( Vector( ) );
+		DrawerPtr drawer = Drawer::getTask( );
+		if ( _count % 120 == 0 ) {
+			drawer->drawString( 0, 0, "どおおおおおおおん" );//デバッグメッセージ
+		}
+	}
+
 
 	draw( );
 }
