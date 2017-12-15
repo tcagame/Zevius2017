@@ -3,6 +3,8 @@
 #include "Drawer.h"
 #include "define.h"
 
+//èºìc
+
 const Vector T_VEC( -3, 0 );
 const Vector REMOVE_POS( 300, 0 );
 const Vector REMOVE_VEC( 3, 3 );

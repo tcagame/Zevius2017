@@ -4,6 +4,8 @@
 #include "define.h"
 #include "Player.h"
 
+//ŠÔ‹{
+
 const double GARUZA_VEC = 2;
 
 
