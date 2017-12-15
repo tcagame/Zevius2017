@@ -6,10 +6,12 @@
 #include "Time.h"
 
 const double GARUZA_VEC = 3;
-const int time = 10;
+const int TIMER = 500;
+
 
 EnemyGaruzakato::EnemyGaruzakato( const Vector& pos, PlayerPtr player ) :
-Enemy( pos, 32 , 30 ) {
+Enemy( pos, 32 , 30 ),
+_time( TIMER ){
 	DrawerPtr drawer = Drawer::getTask( );
 	_image = drawer->createImage( "enemy/enemy.png" );
 	_player = player;
@@ -20,6 +22,7 @@ EnemyGaruzakato::~EnemyGaruzakato( ) {
 }
 
 void EnemyGaruzakato::act( ) {
+	_time--;
 	Vector target_pos = _player->getPos( );
 	Vector pos = getPos( );
 	Vector dir = ( target_pos - pos ).normalize( );
