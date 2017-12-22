@@ -3,10 +3,8 @@
 #include "Drawer.h"
 #include "define.h"
 
-<<<<<<< HEAD
-=======
+
 //¼“c
->>>>>>> 140162dff9c233e704eb4d16208df39573d33589
 
 const Vector T_VEC( -3, 0 );
 const Vector REMOVE_POS( 300, 0 );
@@ -46,12 +44,9 @@ void EnemyTorkan::act( ) {
 	if ( _remove == true ) {
 		vec = REMOVE_VEC;
 	}
-<<<<<<< HEAD
 	if ( pos.y < HALF_POS ) {
 		vec.y *= -1;
 	}
-=======
->>>>>>> 140162dff9c233e704eb4d16208df39573d33589
 
 	setVec( vec );
 

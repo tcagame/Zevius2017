@@ -6,11 +6,13 @@
 #include "EnemyGaruzakato.h"
 #include "EnemyBozalogram.h"
 #include "EnemyBragzakato.h"
+#include "EnemyWall.h"
 
 const Vector T_POS( 1200, 400 );
 const Vector GARUZAKATO_POS( 1200, 400 );
 const Vector BOSA_POS( 1200, 400 );
 const Vector B_POS( 1200, 400 );
+const Vector WALL_POS( 1200, 400 );
 
 
 Military::Military( PlayerPtr player ) {
@@ -18,8 +20,8 @@ Military::Military( PlayerPtr player ) {
 	//addEnemy( EnemyTorkanPtr( new EnemyTorkan( T_POS ) ) );
 	//addEnemy( EnemyGaruzakatoPtr( new EnemyGaruzakato( GARUZAKATO_POS, _player ) ) );
 	//addEnemy( EnemyBozalogramPtr( new EnemyBozalogram( BOSA_POS ) ) );
-	addEnemy( EnemyBragzakatoPtr( new EnemyBragzakato( B_POS, _player ) ) );
-
+	//addEnemy( EnemyBragzakatoPtr( new EnemyBragzakato( B_POS, _player ) ) );
+	addEnemy( EnemyWallPtr( new EnemyWall( WALL_POS ) ) );
 }
 
 

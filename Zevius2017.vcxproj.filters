@@ -35,6 +35,7 @@
     <ClCompile Include="EnemyBozalogram.cpp">
       <Filter>Enemy</Filter>
     </ClCompile>
+    <ClCompile Include="EnemyWall.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h" />
@@ -71,6 +72,7 @@
     <ClInclude Include="EnemyToroid.h">
       <Filter>Enemy</Filter>
     </ClInclude>
+    <ClInclude Include="EnemyWall.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Enemy">

@@ -8,6 +8,7 @@ PTR( EnemyTorkan );
 PTR( EnemyGaruzakato );
 PTR( EnemyBozalogram );
 PTR( EnemyBragzakato );
+PTR( EnemyWall );
 
 class Military {
 public:
