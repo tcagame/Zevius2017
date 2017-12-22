@@ -20,9 +20,9 @@ const int MAX_MOVE_Y = 780;
 
 const int RADIUS = 32;
 
-Player::Player( ) :
-Character( START_POS, RADIUS ){
-	_armoury = ArmouryPtr( new Armoury( ) );
+Player::Player( ArmouryPtr armoury ) :
+Character( START_POS, RADIUS ),
+_armoury( armoury ){
 	DrawerPtr drawer = Drawer::getTask( );
 	_image = drawer->createImage( "player/sol_valou.png" );
 	int width = 0;
@@ -39,7 +39,6 @@ Player::~Player( ) {
 void Player::act( ) {
 	actOnMove( );
 	actOnAttack( );
-	_armoury->update( );
 }
 
 void Player::actOnMove( ) {

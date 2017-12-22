@@ -9,7 +9,7 @@ PTR( Armoury );
 
 class Player : public Character {
 public:
-	Player( );
+	Player( ArmouryPtr armoury );
 	virtual ~Player( );
 public:
 	void draw( );

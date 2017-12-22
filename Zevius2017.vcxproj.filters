@@ -35,7 +35,9 @@
     <ClCompile Include="EnemyBozalogram.cpp">
       <Filter>Enemy</Filter>
     </ClCompile>
-    <ClCompile Include="EnemyWall.cpp" />
+    <ClCompile Include="EnemyWall.cpp">
+      <Filter>Enemy</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h" />
@@ -72,7 +74,9 @@
     <ClInclude Include="EnemyToroid.h">
       <Filter>Enemy</Filter>
     </ClInclude>
-    <ClInclude Include="EnemyWall.h" />
+    <ClInclude Include="EnemyWall.h">
+      <Filter>Enemy</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Enemy">

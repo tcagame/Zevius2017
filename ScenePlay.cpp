@@ -1,6 +1,7 @@
 #include "ScenePlay.h"
 #include "Player.h"
 #include "Military.h"
+#include "Armoury.h"
 #include "Drawer.h"
 #include "Image.h"
 #include "Game.h"
@@ -11,7 +12,8 @@ const int MAP_SIZE = 3000;
 
 ScenePlay::ScenePlay( ) {
 	_init = false;
-	_player = PlayerPtr( new Player( ) );
+	_armoury = ArmouryPtr( new Armoury( ) );
+	_player = PlayerPtr( new Player( _armoury ) );
 	_military = MilitaryPtr( new Military( _player ) );
 	DrawerPtr drawer = Drawer::getTask( );
 	_image = drawer->createImage( "background/background.png" );
@@ -24,6 +26,7 @@ ScenePlay::~ScenePlay( ) {
 Scene::NEXT_SCENE ScenePlay::update( ) {
 	_player->update( );
 	_military->update( );
+	_armoury->update( _military );
 	return Scene::NEXT_CONTINUE;
 }
 
@@ -41,4 +44,5 @@ void ScenePlay::draw( ) {
 	_image->setPos( x2, 0, x3, 810 );
 	_image->draw( );//”wŒi
 	_player->draw( );
+	_armoury->draw( );
 }

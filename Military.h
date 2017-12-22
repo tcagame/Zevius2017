@@ -2,13 +2,14 @@
 #include "smart_ptr.h"
 #include <list>
 
+PTR( Character );
 PTR( Enemy );
 PTR( Player );
 PTR( EnemyTorkan );
 PTR( EnemyGaruzakato );
 PTR( EnemyBozalogram );
 PTR( EnemyBragzakato );
-PTR( EnemyWall );
+PTR( Armoury );
 
 class Military {
 public:
@@ -17,7 +18,8 @@ public:
 public:
 	void update( );
 	void addEnemy( EnemyPtr enemy );
-	std::list< EnemyPtr > getEnemylist( ) const;
+	EnemyPtr getOverLappedEnemy( CharacterPtr character ) const;
+	void clear( );
 private:
 	PlayerPtr _player;
 	std::list< EnemyPtr > _enemies;
