@@ -6,8 +6,8 @@ public:
 	EnemyData0( );
 	virtual ~EnemyData0( );
 public:
-	std::array< char, MAP_WIDTH_NUM * MAP_HEIGHT_NUM + 1 > getEnemyData( int pattern );
+	std::array< char, MAP_WIDTH_NUM * MAP_HEIGHT_NUM + 1 > getEnemyData( );
 private:
-	std::array< std::array< char, MAP_WIDTH_NUM * MAP_HEIGHT_NUM + 1 >, MAX_PATTERN > _data;
+	std::array< char, MAP_WIDTH_NUM * MAP_HEIGHT_NUM + 1 > _data;
 };
 
