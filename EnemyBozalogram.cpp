@@ -49,7 +49,7 @@ void EnemyBozalogram::act( ) {
 }
 
 void EnemyBozalogram::draw( ) {
-	_image->setRect( NORMAL_GRAPH_SIZE * 0, 0, NORMAL_GRAPH_SIZE, NORMAL_GRAPH_SIZE );
+	_image->setRect( 64 * 0, 0, 64, 64 );
 	_image->setPos( getPos( ).x, getPos( ).y );
 	_image->draw( );
 }
