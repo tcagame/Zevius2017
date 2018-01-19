@@ -27,7 +27,7 @@ EnemyData0::~EnemyData0( ) {
 
 }
 
-std::array< char, MAP_WIDTH * MAP_HEIGHT + 1 > EnemyData0::getEnemyData( int pattern ) {
+std::array< char, MAP_WIDTH_NUM * MAP_HEIGHT_NUM + 1 > EnemyData0::getEnemyData( int pattern ) {
 	if ( pattern < 0 ) {
 		pattern = 0;
 	}
