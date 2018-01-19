@@ -5,6 +5,7 @@
 PTR( Character );
 PTR( Enemy );
 PTR( Player );
+PTR( EnemyData );
 PTR( EnemyTorkan );
 PTR( EnemyGaruzakato );
 PTR( EnemyBozalogram );
@@ -22,6 +23,7 @@ public:
 	void clear( );
 private:
 	PlayerPtr _player;
+	EnemyDataPtr _enemy_data;
 	std::list< EnemyPtr > _enemies;
 };
 
