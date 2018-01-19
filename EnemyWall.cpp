@@ -10,7 +10,7 @@ EnemyWall::EnemyWall( const Vector& pos ) :
 Enemy( pos, 32, 0 ),
 _count( 0 ){
 	DrawerPtr drawer = Drawer::getTask( );
-	_image = drawer->createImage( "enemy/enemy.png" );
+	_image = drawer->createImage( "enemy/enemy_medium.png" );
 }
 
 
@@ -19,7 +19,7 @@ EnemyWall::~EnemyWall( ) {
 
 
 void EnemyWall::act( ) {
-	_count += 0.5;
+	_count++;
 	setVec( MOVE_SPEED );
 	draw( );
 }

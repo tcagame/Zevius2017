@@ -5,6 +5,8 @@
 
 //‚“‡
 
+const int MEDIUM_GRAPH_SIZE = 64; 
+
 const Vector MOVE_SPEED( -1, 0 );
 const double RANGE_UP = 200;
 const double RANGE_DOWN = 600;
@@ -49,7 +51,7 @@ void EnemyBozalogram::act( ) {
 }
 
 void EnemyBozalogram::draw( ) {
-	_image->setRect( 64 * 0, 0, 64, 64 );
+	_image->setRect( MEDIUM_GRAPH_SIZE * 0, 0, MEDIUM_GRAPH_SIZE, MEDIUM_GRAPH_SIZE );
 	_image->setPos( getPos( ).x, getPos( ).y );
 	_image->draw( );
 }
