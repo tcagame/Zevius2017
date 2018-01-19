@@ -14,7 +14,7 @@ _attack( false ),
 _count( 0 ) {
 	_player = player;
 	DrawerPtr drawer = Drawer::getTask( );
-	_image = drawer->createImage( "enemy/enemy_small2.png" );
+	_image = drawer->createImage( "enemy/enemy_small1.png" );
 }
 
    
@@ -48,7 +48,7 @@ void EnemyBragzakato::act( ) {
 
 void EnemyBragzakato::draw( ) {
 	Vector pos = getPos( );
-	_image->setRect( SMALL_GRAPH_SIZE * 3, 0, SMALL_GRAPH_SIZE, SMALL_GRAPH_SIZE );
+	_image->setRect( SMALL_GRAPH_SIZE * 0, SMALL_GRAPH_SIZE * 3, SMALL_GRAPH_SIZE, SMALL_GRAPH_SIZE );
 	_image->setPos( pos.x, pos.y );
 	_image->draw( );
 }
