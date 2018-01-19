@@ -34,7 +34,7 @@ void EnemyGaruzakato::act( ) {
 }
 
 void EnemyGaruzakato::draw( ) {
-	_image->setRect( NORMAL_GRAPH_SIZE * 3, NORMAL_GRAPH_SIZE * 5, NORMAL_GRAPH_SIZE, NORMAL_GRAPH_SIZE );
+	_image->setRect( SMALL_GRAPH_SIZE * 5, SMALL_GRAPH_SIZE * 3, SMALL_GRAPH_SIZE, SMALL_GRAPH_SIZE );
 	_image->setPos( getPos( ).x, getPos( ).y );
 	_image->draw( );
 }

@@ -6,9 +6,9 @@ EnemyData0::EnemyData0( ) {
 	_data = {
 		"                          A                                                                                                                           "
 		"                          A                                                                                                                           "
-		"              B           A                                                                                                                           "
-		"              C           A                                                                                                                           "
-		"              D           A                                                                                                                           "
+		"    B                     A                                                                                                                           "
+		"       CCCCCCCCCCCC       A                                                                                                                           "
+		"          D               A                                                                                                                           "
 		"              E           A                                                                                                                           "
 		"              EEEEEEEE    A                                                                                                                           "
 		"              EEEEEEEE    A                                                                                                                           "

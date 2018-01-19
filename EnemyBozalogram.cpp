@@ -5,8 +5,6 @@
 
 //‚“‡
 
-const int MEDIUM_GRAPH_SIZE = 64; 
-
 const Vector MOVE_SPEED( -1, 0 );
 const double RANGE_UP = 200;
 const double RANGE_DOWN = 600;
@@ -17,7 +15,7 @@ EnemyBozalogram::EnemyBozalogram( const Vector& pos ) :
 Enemy( pos, 32 , 30 ),
 _flag( false ) {
 	DrawerPtr drawer = Drawer::getTask( );
-	_image = drawer->createImage( "enemy/enemy.png" );
+	_image = drawer->createImage( "enemy/enemy_medium.png" );
 	setVec( MOVE_SPEED );
 }
 
@@ -51,7 +49,7 @@ void EnemyBozalogram::act( ) {
 }
 
 void EnemyBozalogram::draw( ) {
-	_image->setRect( MEDIUM_GRAPH_SIZE * 0, 0, MEDIUM_GRAPH_SIZE, MEDIUM_GRAPH_SIZE );
+	_image->setRect( NORMAL_GRAPH_SIZE * 0, NORMAL_GRAPH_SIZE * 12, NORMAL_GRAPH_SIZE, NORMAL_GRAPH_SIZE );
 	_image->setPos( getPos( ).x, getPos( ).y );
 	_image->draw( );
 }
