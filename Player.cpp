@@ -81,12 +81,13 @@ void Player::actOnMove( ) {
 void Player::actOnAttack( ) {
 	KeyboardPtr keyboard = Keyboard::getTask( );
 	if ( keyboard->isPushKey( "Z" ) ) {
-		_armoury->addShot( PlayerShotPtr( new PlayerShot( getPos( ) ) ) );
+		_armoury->addShot( PlayerShotPtr( new PlayerShot( Vector( getPos( ).x, getPos( ).y + SMALL_GRAPH_SIZE / 2 ) ) ) );
 	}
 }
 
 void Player::draw( ) {
 	Vector pos = getPos( );
+	_image->setRect( 0,0,SMALL_GRAPH_SIZE * 1,SMALL_GRAPH_SIZE * 1 );
 	_image->setPos( ( int )pos.x, ( int )pos.y, ( int )pos.x + CHARACTER_SIZE, ( int )pos.y + CHARACTER_SIZE );
 	_image->draw( );
 	_armoury->draw( );
