@@ -14,7 +14,7 @@ EnemyGaruzakato::EnemyGaruzakato( const Vector& pos, PlayerPtr player ) :
 Enemy( pos, 32 , 30 ),
 _time( TIMER ){
 	DrawerPtr drawer = Drawer::getTask( );
-	_image = drawer->createImage( "enemy/enemy.png" );
+	_image = drawer->createImage( "enemy/enemy_small1.png" );
 	_player = player;
 }
 
@@ -34,7 +34,7 @@ void EnemyGaruzakato::act( ) {
 }
 
 void EnemyGaruzakato::draw( ) {
-	_image->setRect( NORMAL_GRAPH_SIZE * 3, 0, NORMAL_GRAPH_SIZE, NORMAL_GRAPH_SIZE );
+	_image->setRect( 16 * 5, 16*5, 16, 16 );
 	_image->setPos( getPos( ).x, getPos( ).y );
 	_image->draw( );
 }
