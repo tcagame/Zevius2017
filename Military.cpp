@@ -7,7 +7,7 @@
 #include "EnemyBozalogram.h"
 #include "EnemyBragzakato.h"
 
-const Vector T_POS( 1200, 400 );
+const Vector T_POS( 1000, 400 );
 const Vector GARUZAKATO_POS( 1200, 400 );
 const Vector BOSA_POS( 1200, 400 );
 const Vector B_POS( 1200, 400 );
