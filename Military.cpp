@@ -8,6 +8,8 @@
 #include "EnemyGaruzakato.h"
 #include "EnemyBozalogram.h"
 #include "EnemyBragzakato.h"
+#include "EnemyWall.h"
+#include "EnemyBoss.h"
 
 #include <array>
 
@@ -31,6 +33,12 @@ Military::Military( PlayerPtr player ) {
 			break;
 		case 'D':
 			addEnemy( EnemyBragzakatoPtr( new EnemyBragzakato( Vector( x, y ), _player ) ) );
+			break;
+		case 'E':
+			addEnemy( EnemyWallPtr( new EnemyWall( Vector( x, y ) ) ) );
+			break;
+		case '#':
+			addEnemy( EnemyBossPtr( new EnemyBoss( Vector( x, y ) ) ) );
 			break;
 		}
 	}

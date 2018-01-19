@@ -10,6 +10,8 @@ PTR( EnemyTorkan );
 PTR( EnemyGaruzakato );
 PTR( EnemyBozalogram );
 PTR( EnemyBragzakato );
+PTR( EnemyWall );
+PTR( EnemyBoss );
 PTR( Armoury );
 
 class Military {

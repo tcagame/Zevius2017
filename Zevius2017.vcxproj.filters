@@ -40,6 +40,9 @@
     </ClCompile>
     <ClCompile Include="EnemyData.cpp" />
     <ClCompile Include="EnemyData0.cpp" />
+    <ClCompile Include="EnemyBoss.cpp">
+      <Filter>Enemy</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h" />
@@ -81,6 +84,9 @@
     </ClInclude>
     <ClInclude Include="EnemyData.h" />
     <ClInclude Include="EnemyData0.h" />
+    <ClInclude Include="EnemyBoss.h">
+      <Filter>Enemy</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Enemy">
