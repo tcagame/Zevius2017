@@ -13,6 +13,7 @@ const double HALF_POS = 600;
 
 
 
+
 int Getrandom(int min, int max)
 {
 	return min + (int)(rand()*(max-min+1.0)/(1.0+RAND_MAX));
@@ -24,7 +25,7 @@ EnemyTorkan::EnemyTorkan( const Vector& pos ) :
 Enemy( pos, 32, 500 ),
 _remove( false ){
 	DrawerPtr drawer = Drawer::getTask( );
-	_image = drawer->createImage( "enemy/enemy.png" );
+	_image = drawer->createImage( "enemy/enemy_small2.png" );
 }
 
 
@@ -54,7 +55,7 @@ void EnemyTorkan::act( ) {
 }
 
 void EnemyTorkan::draw( ) {
-	_image->setRect( NORMAL_GRAPH_SIZE * 2, 0, NORMAL_GRAPH_SIZE, NORMAL_GRAPH_SIZE );
+	_image->setRect( 16 * 0, 0, 16, 16 );
 	_image->setPos( getPos( ).x, getPos( ).y );
 	_image->draw( );
 }
