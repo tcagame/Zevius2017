@@ -3,8 +3,8 @@
 #include "define.h"
 
 static const int MAP_WIDTH_NUM  = 150;
-static const int MAP_HEIGHT_NUM = 15;
-const int MAP_SIZE = 960 / MAP_HEIGHT_NUM;
+static const int MAP_HEIGHT_NUM = 23;
+const int MAP_SIZE = ( NORMAL_GRAPH_SIZE * MAP_HEIGHT_NUM ) / MAP_HEIGHT_NUM;
 
 class EnemyData {
 public:
