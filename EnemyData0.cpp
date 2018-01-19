@@ -11,7 +11,7 @@ EnemyData0::EnemyData0( ) {
 		"                          A                                                                                                                           "
 		"                          A                                                                                                                           "
 		"                          A                                                                                                                           "
-		"                          A                                #                                                                                          "
+		"                          A                                                                                                                           "
 		"                          A                                                                                                                           "
 		"                          A                                                                                                                           "
 		"                          A                                                                                                                           "
