@@ -38,6 +38,8 @@
     <ClCompile Include="EnemyWall.cpp">
       <Filter>Enemy</Filter>
     </ClCompile>
+    <ClCompile Include="Map.cpp" />
+    <ClCompile Include="Map0.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h" />
@@ -77,6 +79,8 @@
     <ClInclude Include="EnemyWall.h">
       <Filter>Enemy</Filter>
     </ClInclude>
+    <ClInclude Include="Map.h" />
+    <ClInclude Include="Map0.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Enemy">

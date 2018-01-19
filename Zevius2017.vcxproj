@@ -167,6 +167,8 @@
     <ClCompile Include="EnemyWall.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Map.cpp" />
+    <ClCompile Include="Map0.cpp" />
     <ClCompile Include="Military.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayerShot.cpp" />
@@ -191,6 +193,8 @@
     <ClInclude Include="EnemyToroid.h" />
     <ClInclude Include="EnemyWall.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="Map.h" />
+    <ClInclude Include="Map0.h" />
     <ClInclude Include="Military.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayerShot.h" />
