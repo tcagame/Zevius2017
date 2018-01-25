@@ -50,12 +50,10 @@ void EnemyTorkan::act( ) {
 	}
 
 	setVec( vec );
-
-	draw( );
 }
 
-void EnemyTorkan::draw( ) {
+void EnemyTorkan::draw( int camera_x ) const{
 	_image->setRect( 16 * 0, 0, 16, 16 );
-	_image->setPos( getPos( ).x, getPos( ).y );
+	_image->setPos( ( int )getPos( ).x - camera_x, ( int )getPos( ).y );
 	_image->draw( );
 }

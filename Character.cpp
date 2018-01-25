@@ -18,15 +18,15 @@ void Character::update( ) {
 	_pos += _vec;
 }
 
-Vector Character::getPos( ) {
+Vector Character::getPos( ) const{
 	return _pos;
 }
 
-Vector Character::getVec( ) {
+Vector Character::getVec( ) const{
 	return _vec;
 }
 
-double Character::getRadius( ) {
+double Character::getRadius( ) const{
 	return _radius;
 }
 
@@ -35,7 +35,7 @@ void Character::setVec( const Vector& vec ) {
 	_vec = vec;
 }
 
-bool Character::isOverLapped( CharacterPtr target ) {
+bool Character::isOverLapped( CharacterPtr target ) const{
 	bool result = false;
 	
 	if ( ( _pos - target->getPos( ) ).getLength( ) < _radius + target->getRadius( ) ) {

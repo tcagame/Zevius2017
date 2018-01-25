@@ -11,7 +11,7 @@ public:
 	virtual ~EnemyGaruzakato( );
 private:
 	void act( );
-	void draw( );
+	void draw( int camera_x ) const;
 private:
 	ImagePtr _image;
 	PlayerPtr _player;

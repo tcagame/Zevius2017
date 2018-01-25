@@ -18,14 +18,10 @@ EnemyBoss::~EnemyBoss( ) {
 
 void EnemyBoss::act( ) {
 	_count++;
-	draw( );
 }
 
-void EnemyBoss::draw( ) {
-	if ( _count > ANIM_NUM ) {//_count‚ªANIM_NUM‚ğ’´‚¦‚½‚çA_count1‚ğ0‚É‚·‚é
-		_count = 0;
-	}
-	_image->setRect( BOSS_GRAPH_SIZE * _count, 0, BOSS_GRAPH_SIZE, BOSS_GRAPH_SIZE );
+void EnemyBoss::draw( int camera_x ) const{
+	_image->setRect( BOSS_GRAPH_SIZE * ( _count % ANIM_NUM ), 0, BOSS_GRAPH_SIZE, BOSS_GRAPH_SIZE );
 	_image->setPos( getPos( ).x, getPos( ).y );
 	_image->draw( );
 }

@@ -42,13 +42,10 @@ void EnemyBragzakato::act( ) {
 		}
 	}
 
-
-	draw( );
 }
 
-void EnemyBragzakato::draw( ) {
-	Vector pos = getPos( );
+void EnemyBragzakato::draw( int camera_x ) const{
 	_image->setRect( SMALL_GRAPH_SIZE * 0, SMALL_GRAPH_SIZE * 3, SMALL_GRAPH_SIZE, SMALL_GRAPH_SIZE );
-	_image->setPos( pos.x, pos.y );
+	_image->setPos( ( int )getPos( ).x - camera_x, ( int )getPos( ).y );
 	_image->draw( );
 }

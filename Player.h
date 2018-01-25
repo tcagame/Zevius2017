@@ -12,7 +12,7 @@ public:
 	Player( ArmouryPtr armoury );
 	virtual ~Player( );
 public:
-	void draw( );
+	void draw( int camera_x ) const;
 	void setFinished( bool finish );
 	bool isFinished( );
 private:

@@ -6,7 +6,7 @@
 #include "Time.h"
 
 //ŠÔ‹{
-const double GARUZA_VEC = 3;
+const double GARUZA_VEC = 1;
 const int TIMER = 500;
 
 
@@ -30,11 +30,10 @@ void EnemyGaruzakato::act( ) {
 	Vector vec = dir * GARUZA_VEC;
 
 	setVec( vec );
-	draw( );
 }
 
-void EnemyGaruzakato::draw( ) {
+void EnemyGaruzakato::draw( int camera_x ) const{
 	_image->setRect( SMALL_GRAPH_SIZE * 5, SMALL_GRAPH_SIZE * 3, SMALL_GRAPH_SIZE, SMALL_GRAPH_SIZE );
-	_image->setPos( getPos( ).x, getPos( ).y );
+	_image->setPos( ( int )getPos( ).x - camera_x, ( int )getPos( ).y );
 	_image->draw( );
 }

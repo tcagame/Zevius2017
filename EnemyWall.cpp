@@ -21,14 +21,10 @@ EnemyWall::~EnemyWall( ) {
 void EnemyWall::act( ) {
 	_count++;
 	setVec( MOVE_SPEED );
-	draw( );
 }
 
-void EnemyWall::draw( ) {
-	if ( _count > ANIM_NUM ) {//_count‚ªANIM_NUM‚ğ’´‚¦‚½‚çA_count1‚ğ0‚É‚·‚é
-		_count = 0;
-	}
-	_image->setRect( NORMAL_GRAPH_SIZE * _count, NORMAL_GRAPH_SIZE * 2, NORMAL_GRAPH_SIZE, NORMAL_GRAPH_SIZE );
-	_image->setPos( getPos( ).x, getPos( ).y );
+void EnemyWall::draw( int camera_x ) const{
+	_image->setRect( NORMAL_GRAPH_SIZE * ( _count % ANIM_NUM ), NORMAL_GRAPH_SIZE * 2, NORMAL_GRAPH_SIZE, NORMAL_GRAPH_SIZE );
+	_image->setPos( ( int )getPos( ).x - camera_x, ( int )getPos( ).y );
 	_image->draw( );
 }

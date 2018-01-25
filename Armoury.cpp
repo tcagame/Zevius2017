@@ -2,6 +2,7 @@
 #include "Military.h"
 #include "PlayerShot.h"
 #include "Enemy.h"
+#include "Game.h"
 
 
 Armoury::Armoury( ) {
@@ -29,8 +30,9 @@ void Armoury::update( MilitaryPtr military ) {
 }
 
 void Armoury::draw( ) const {
+	int camera_x = Game::getTask( )->getGameCount( );
 	for ( PlayerShotPtr shot : _shots ) {
-		shot->draw( );
+		shot->draw( camera_x );
 	}
 }
 

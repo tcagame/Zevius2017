@@ -8,9 +8,12 @@ class EnemyExplosion {
 public:
 	EnemyExplosion( Vector& pos );
 	virtual ~EnemyExplosion( );
+public:
+	bool isFinished( );
+	void draw( int camera_x );
 private:
-	void drawExplosion( Vector& pos );
-private:
+	Vector _pos;
+	int _count;
 	ImagePtr _image;
 };
 

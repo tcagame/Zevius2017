@@ -5,10 +5,11 @@
 
 const int ANIM_NUM = 9;
 
-EnemyExplosion::EnemyExplosion( Vector& pos ) {
+EnemyExplosion::EnemyExplosion( Vector& pos ) :
+_pos( pos ),
+_count( 0 ) {
 	DrawerPtr drawer = Drawer::getTask( );
 	_image = drawer->createImage( "enemy/enemy_medium.png" );
-	drawExplosion( pos );
 }
 
 
@@ -16,10 +17,13 @@ EnemyExplosion::~EnemyExplosion( ) {
 
 }
 
-void EnemyExplosion::drawExplosion( Vector& pos ) {
-	for ( int i = 0; i < ANIM_NUM; i++ ) {
-		_image->setRect( NORMAL_GRAPH_SIZE * i, NORMAL_GRAPH_SIZE * 3, NORMAL_GRAPH_SIZE, NORMAL_GRAPH_SIZE );
-		_image->setPos( pos.x, pos.y );
-		_image->draw( );
-	}
+bool EnemyExplosion::isFinished( ) {
+	return _count >= ANIM_NUM;
+}
+
+void EnemyExplosion::draw( int camera_x ) {
+	_image->setRect( NORMAL_GRAPH_SIZE * _count, NORMAL_GRAPH_SIZE * 3, NORMAL_GRAPH_SIZE, NORMAL_GRAPH_SIZE );
+	_image->setPos( ( int )_pos.x - camera_x, ( int )_pos.y );
+	_image->draw( );
+	_count++;
 }

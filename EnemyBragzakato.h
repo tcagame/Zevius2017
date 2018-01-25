@@ -11,7 +11,7 @@ public:
 	virtual ~EnemyBragzakato( );
 private:
 	void act( );
-	void draw( );
+	void draw( int camera_x ) const;
 private:
 	ImagePtr _image;
 	Vector _pos;

@@ -10,7 +10,7 @@ public:
 	virtual ~EnemyBoss( );
 public:
 	void act( );
-	void draw( );
+	void draw( int camera_x ) const;
 private:
 	int _count;
 	ImagePtr _image;

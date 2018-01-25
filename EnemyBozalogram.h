@@ -10,7 +10,7 @@ public:
 	virtual ~EnemyBozalogram( );
 private:
 	void act( );
-	void draw( );
+	void draw( int camera_x ) const;
 private:
 	ImagePtr _image;
 	bool _flag;

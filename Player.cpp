@@ -7,6 +7,7 @@
 #include "define.h"
 #include "ScenePlay.h"
 #include "Armoury.h"
+#include "Game.h"
 
 //プレイヤーの初期位置
 const double START_X = 50;
@@ -15,9 +16,6 @@ const Vector START_POS( START_X, START_Y );
 //プレイヤーの移動速度
 const double MOVE_SPEED = 3.5;
 //プレイヤーの移動制限
-const int MAX_MOVE_X = 1412;
-const int MAX_MOVE_Y = 780;
-
 const int RADIUS = 32;
 
 Player::Player( ArmouryPtr armoury ) :
@@ -45,7 +43,7 @@ void Player::act( ) {
 void Player::actOnMove( ) {
 	DevicePtr device = Device::getTask( );
 	KeyboardPtr keyboard = Keyboard::getTask( );
-	Vector vec;
+	Vector vec = Vector( 1, 0 );
 	//プレイヤーの移動
 	if ( keyboard->isHoldKey( "ARROW_RIGHT" ) ) {
 		vec.x += MOVE_SPEED;
@@ -61,18 +59,23 @@ void Player::actOnMove( ) {
 	}
 
 	Vector pos = getPos( );
+	int camera_x = Game::getTask( )->getGameCount( );
 	//プレイヤーの移動範囲
-	if ( pos.x + vec.x <= 0 ) {
-		vec.x = 0 - pos.x;
+	int left = camera_x;
+	int right = camera_x + SCREEN_WIDTH - NORMAL_GRAPH_SIZE;
+	if ( pos.x + vec.x <= left ) {
+		vec.x = left - pos.x;
 	}
-	if ( pos.x + vec.x >= MAX_MOVE_X ) {
-		vec.x = MAX_MOVE_X - pos.x;
+
+	if ( pos.x + vec.x >= right ) {
+		vec.x = right - pos.x;
 	}
+
 	if ( pos.y + vec.y <= 0 ) {
 		vec.y = 0 - pos.y;
 	}
-	if ( pos.y + vec.y >= MAX_MOVE_Y ) {
-		vec.y = MAX_MOVE_Y - pos.y;
+	if ( pos.y + vec.y >= SCREEN_HEIGHT - NORMAL_GRAPH_SIZE ) {
+		vec.y = SCREEN_HEIGHT - NORMAL_GRAPH_SIZE - pos.y;
 	}
 	
 	Drawer::getTask( )->drawString( 0, 100, "x:%lf y:%lf", pos.x, pos.y );
@@ -86,10 +89,14 @@ void Player::actOnAttack( ) {
 	}
 }
 
-void Player::draw( ) {
+void Player::draw( int camera_x ) const {
 	Vector pos = getPos( );
-	_image->setRect( 0,0,SMALL_GRAPH_SIZE * 1,SMALL_GRAPH_SIZE * 1 );
-	_image->setPos( ( int )pos.x, ( int )pos.y, ( int )pos.x + CHARACTER_SIZE, ( int )pos.y + CHARACTER_SIZE );
+	_image->setRect( 0, 0, SMALL_GRAPH_SIZE * 1, SMALL_GRAPH_SIZE * 1 );
+	int sx1 = ( int )pos.x - camera_x;
+	int sy1 = ( int )pos.y;
+	int sx2 = sx1 + CHARACTER_SIZE;
+	int sy2 = sy1 + CHARACTER_SIZE;
+	_image->setPos( sx1, sy1, sx2, sy2 );
 	_image->draw( );
 	_armoury->draw( );
 }

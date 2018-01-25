@@ -11,7 +11,7 @@ public:
 	PlayerShot( Vector pos );
 	virtual ~PlayerShot( );
 public:
-	void draw( );
+	void draw( int camera_x ) const;
 private:
 	void act( );
 private:

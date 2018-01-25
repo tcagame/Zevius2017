@@ -21,7 +21,7 @@ void PlayerShot::act( ) {
 	setVec( vec );
 }
 
-void PlayerShot::draw( ) {
+void PlayerShot::draw( int camera_x ) const {
 	Vector pos = getPos( );
 	_image->setRect( 0,0,SMALL_GRAPH_SIZE * 1,SMALL_GRAPH_SIZE * 1/*切り取り始点X、切り取り始点Y、始点からどれくらいX、始点からどれくらいY*/ );
 	_image->setPos( pos.x, pos.y );

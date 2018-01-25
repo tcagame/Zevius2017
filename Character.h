@@ -10,13 +10,15 @@ public:
 	Character( const Vector& pos, const double radius );
 	virtual ~Character( );
 public:
-	virtual void act( ) = 0;
 	void update( );
-	double getRadius( );
-	Vector getPos( );
-	Vector getVec( );
-	bool isOverLapped( CharacterPtr target );
+	virtual void draw( int camera_x ) const = 0;
+public://getÅEisån
+	double getRadius( ) const;
+	Vector getPos( ) const;
+	Vector getVec( ) const;
+	bool isOverLapped( CharacterPtr target ) const;
 protected:
+	virtual void act( ) = 0;
 	void setVec( const Vector& vec );
 private:
 	Vector _pos;

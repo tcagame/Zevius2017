@@ -37,6 +37,7 @@ void Game::changeScene( ) {
 	if ( _next == Scene::NEXT_CONTINUE ) {
 		return;
 	}
+	_count = 0;
 	switch( _next ) {
 	case Scene::NEXT_TITLE:
 		_scene = ScenePtr( new SceneTitle( ) );

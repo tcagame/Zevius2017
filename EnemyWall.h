@@ -10,9 +10,9 @@ public:
 	virtual ~EnemyWall( );
 private:
 	void act( );
-	void draw( );
+	void draw( int camera_x ) const;
 private:
 	ImagePtr _image;
-	double _count;
+	int _count;
 };
 

@@ -45,11 +45,10 @@ void EnemyBozalogram::act( ) {
 	}
 	vec.y += a;
 	setVec( vec );
-	draw( );
 }
 
-void EnemyBozalogram::draw( ) {
+void EnemyBozalogram::draw( int camera_x ) const{
 	_image->setRect( NORMAL_GRAPH_SIZE * 0, NORMAL_GRAPH_SIZE * 12, NORMAL_GRAPH_SIZE, NORMAL_GRAPH_SIZE );
-	_image->setPos( getPos( ).x, getPos( ).y );
+	_image->setPos( ( int )getPos( ).x - camera_x, ( int )getPos( ).y );
 	_image->draw( );
 }
