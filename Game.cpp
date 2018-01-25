@@ -3,6 +3,7 @@
 #include "Scene.h"
 #include "SceneTitle.h"
 #include "ScenePlay.h"
+#include "SceneResult.h"
 #include "Drawer.h"
 
 
@@ -42,6 +43,9 @@ void Game::changeScene( ) {
 		break;
 	case Scene::NEXT_PLAY:
 		_scene = ScenePtr( new ScenePlay( ) );
+		break;
+	case Scene::NEXT_RESULT:
+		_scene = ScenePtr( new SceneResult( ) );
 		break;
 	}
 }

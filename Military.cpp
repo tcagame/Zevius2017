@@ -10,6 +10,7 @@
 #include "EnemyBragzakato.h"
 #include "EnemyWall.h"
 #include "EnemyBoss.h"
+#include "EnemyExplosion.h"
 
 #include <array>
 
@@ -54,7 +55,11 @@ void Military::update( ) {
 	while( ite != _enemies.end( ) ) {
 		EnemyPtr enemy = *ite;
 		enemy->update( );
+		if ( getOverLappedEnemy( _player ) != EnemyPtr( ) ) {
+			_player->setFinished( true );
+		}
 		if( enemy->isFinished( ) == true ) {
+			EnemyExplosionPtr( new EnemyExplosion( enemy->getPos( ) ) );
 			ite = _enemies.erase( ite );
 			continue;
 		}

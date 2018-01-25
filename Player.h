@@ -13,6 +13,8 @@ public:
 	virtual ~Player( );
 public:
 	void draw( );
+	void setFinished( bool finish );
+	bool isFinished( );
 private:
 	void act( );
 	void actOnMove( );
@@ -21,5 +23,6 @@ private:
 	ImagePtr _image;
 	ArmouryPtr _armoury;
 	Vector _pos;
+	bool _game_over;
 };
 

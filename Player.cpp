@@ -22,7 +22,8 @@ const int RADIUS = 32;
 
 Player::Player( ArmouryPtr armoury ) :
 Character( START_POS, RADIUS ),
-_armoury( armoury ){
+_armoury( armoury ), 
+_game_over( false ) {
 	DrawerPtr drawer = Drawer::getTask( );
 	_image = drawer->createImage( "player/sol_valou.png" );
 	int width = 0;
@@ -91,4 +92,12 @@ void Player::draw( ) {
 	_image->setPos( ( int )pos.x, ( int )pos.y, ( int )pos.x + CHARACTER_SIZE, ( int )pos.y + CHARACTER_SIZE );
 	_image->draw( );
 	_armoury->draw( );
+}
+
+void Player::setFinished( bool finish ) {
+	_game_over = finish;
+}
+
+bool Player::isFinished( ) {
+	return _game_over;
 }

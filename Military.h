@@ -12,6 +12,7 @@ PTR( EnemyBozalogram );
 PTR( EnemyBragzakato );
 PTR( EnemyWall );
 PTR( EnemyBoss );
+PTR( EnemyExplosion );
 PTR( Armoury );
 
 class Military {

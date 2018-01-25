@@ -162,6 +162,7 @@
     <ClCompile Include="EnemyBoss.cpp" />
     <ClCompile Include="EnemyBozalogram.cpp" />
     <ClCompile Include="EnemyBragzakato.cpp" />
+    <ClCompile Include="EnemyExplosion.cpp" />
     <ClCompile Include="EnemyGaruzakato.cpp" />
     <ClCompile Include="EnemyTorkan.cpp" />
     <ClCompile Include="EnemyToroid.cpp" />
@@ -175,6 +176,7 @@
     <ClCompile Include="PlayerShot.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="ScenePlay.cpp" />
+    <ClCompile Include="SceneResult.cpp" />
     <ClCompile Include="SceneTitle.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -190,6 +192,7 @@
     <ClInclude Include="EnemyBoss.h" />
     <ClInclude Include="EnemyBozalogram.h" />
     <ClInclude Include="EnemyBragzakato.h" />
+    <ClInclude Include="EnemyExplosion.h" />
     <ClInclude Include="EnemyGaruzakato.h" />
     <ClInclude Include="EnemyTorkan.h" />
     <ClInclude Include="EnemyToroid.h" />
@@ -202,6 +205,7 @@
     <ClInclude Include="PlayerShot.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="ScenePlay.h" />
+    <ClInclude Include="SceneResult.h" />
     <ClInclude Include="SceneTitle.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

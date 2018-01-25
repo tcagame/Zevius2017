@@ -28,6 +28,9 @@ Scene::NEXT_SCENE ScenePlay::update( ) {
 	_player->update( );
 	_military->update( );
 	_armoury->update( _military );
+	if ( _player->isFinished( ) ) {
+		return Scene::NEXT_RESULT;
+	}
 	return Scene::NEXT_CONTINUE;
 }
 
