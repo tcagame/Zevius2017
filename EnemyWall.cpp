@@ -6,11 +6,11 @@
 const int ANIM_NUM = 7;
 const Vector MOVE_SPEED( -2, 0 );
 
-EnemyWall::EnemyWall( const Vector& pos ) :
+EnemyWall::EnemyWall( const Vector& pos, ImagePtr medium ) :
 Enemy( pos, 32, 0 ),
-_count( 0 ){
-	DrawerPtr drawer = Drawer::getTask( );
-	_image = drawer->createImage( "enemy/enemy_medium.png" );
+_count( 0 ),
+_image( medium ){
+
 }
 
 

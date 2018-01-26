@@ -6,7 +6,7 @@ PTR( Image );
 
 class EnemyBoss : public Enemy {
 public:
-	EnemyBoss( const Vector& pos );
+	EnemyBoss( const Vector& pos, ImagePtr boss );
 	virtual ~EnemyBoss( );
 public:
 	void act( );

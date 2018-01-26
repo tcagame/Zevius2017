@@ -21,11 +21,10 @@ int Getrandom(int min, int max)
 }
 
 
-EnemyTorkan::EnemyTorkan( const Vector& pos ) :
+EnemyTorkan::EnemyTorkan( const Vector& pos, ImagePtr small_2 ) :
 Enemy( pos, 32, 500 ),
-_remove( false ){
-	DrawerPtr drawer = Drawer::getTask( );
-	_image = drawer->createImage( "enemy/enemy_small2.png" );
+_remove( false ),
+_image( small_2 ){
 }
 
 

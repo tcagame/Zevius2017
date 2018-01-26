@@ -6,7 +6,7 @@ PTR( Image );
 
 class EnemyWall : public Enemy {
 public:
-	EnemyWall( const Vector& pos );
+	EnemyWall( const Vector& pos, ImagePtr medium );
 	virtual ~EnemyWall( );
 private:
 	void act( );

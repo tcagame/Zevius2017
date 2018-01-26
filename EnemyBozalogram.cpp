@@ -11,11 +11,10 @@ const double RANGE_DOWN = 600;
 const double ACCEL = 0.3;
 const double MAX_SPEED = 5;
 
-EnemyBozalogram::EnemyBozalogram( const Vector& pos ) :
+EnemyBozalogram::EnemyBozalogram( const Vector& pos, ImagePtr medium ) :
 Enemy( pos, 32 , 30 ),
-_flag( false ) {
-	DrawerPtr drawer = Drawer::getTask( );
-	_image = drawer->createImage( "enemy/enemy_medium.png" );
+_flag( false ),
+_image( medium ) {
 	setVec( MOVE_SPEED );
 }
 
