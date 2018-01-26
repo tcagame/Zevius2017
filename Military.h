@@ -3,6 +3,7 @@
 #include "EnemyData.h"
 #include <list>
 
+PTR( Image );
 PTR( Character );
 PTR( Enemy );
 PTR( Player );
@@ -35,6 +36,10 @@ private:
 	std::array< char, MAP_WIDTH_NUM * MAP_HEIGHT_NUM + 1 > _enemy_data;
 	std::list< EnemyPtr > _enemies;
 	std::list< EnemyExplosionPtr > _explosions;
+	ImagePtr _small_1;
+	ImagePtr _small_2;
+	ImagePtr _medium;
+	ImagePtr _boss;
 	int _load_x;
 };
 

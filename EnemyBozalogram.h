@@ -6,7 +6,7 @@ PTR( Image );
 
 class EnemyBozalogram : public Enemy {
 public:
-	EnemyBozalogram( const Vector& pos );
+	EnemyBozalogram( const Vector& pos, ImagePtr medium );
 	virtual ~EnemyBozalogram( );
 private:
 	void act( );

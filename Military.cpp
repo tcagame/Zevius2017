@@ -11,6 +11,7 @@
 #include "EnemyBoss.h"
 #include "EnemyExplosion.h"
 #include "Drawer.h"
+#include "Image.h"
 #include "Game.h"
 
 #include <array>
@@ -22,6 +23,11 @@ _load_x( 0 ),
 _player( player ) {
 	EnemyDataPtr enemy_data = EnemyDataPtr( new EnemyData0 );
 	_enemy_data = enemy_data->getEnemyData( );
+	DrawerPtr drawer = Drawer::getTask( );
+	_small_1 = drawer->createImage( "enemy/enemy_small1.png" );
+	_small_2 = drawer->createImage( "enemy/enemy_small2.png" );
+	_medium = drawer->createImage( "enemy/enemy_medium.png" );
+	_boss = drawer->createImage( "enemy/enemy_boss.png" );
 }
 
 
@@ -48,22 +54,22 @@ void Military::loadEnemy( ) {
 			int idx = _load_x + i * MAP_WIDTH_NUM;
 			switch( _enemy_data[ idx ] ) {
 			case 'A':
-				addEnemy( EnemyTorkanPtr( new EnemyTorkan( Vector( x, y ) ) ) );
+				addEnemy( EnemyTorkanPtr( new EnemyTorkan( Vector( x, y ), _small_2 ) ) );
 				break;
 			case 'B':
-				addEnemy( EnemyGaruzakatoPtr( new EnemyGaruzakato( Vector( x, y ), _player ) ) );
+				addEnemy( EnemyGaruzakatoPtr( new EnemyGaruzakato( Vector( x, y ), _player, _small_1 ) ) );
 				break;
 			case 'C':
-				addEnemy( EnemyBozalogramPtr( new EnemyBozalogram( Vector( x, y ) ) ) );
+				addEnemy( EnemyBozalogramPtr( new EnemyBozalogram( Vector( x, y ), _medium ) ) );
 				break;
 			case 'D':
-				addEnemy( EnemyBragzakatoPtr( new EnemyBragzakato( Vector( x, y ), _player ) ) );
+				addEnemy( EnemyBragzakatoPtr( new EnemyBragzakato( Vector( x, y ), _player, _small_1 ) ) );
 				break;
 			case 'E':
-				addEnemy( EnemyWallPtr( new EnemyWall( Vector( x, y ) ) ) );
+				addEnemy( EnemyWallPtr( new EnemyWall( Vector( x, y ), _medium ) ) );
 				break;
 			case '#':
-				addEnemy( EnemyBossPtr( new EnemyBoss( Vector( x, y ) ) ) );
+				addEnemy( EnemyBossPtr( new EnemyBoss( Vector( x, y ), _boss ) ) );
 				break;
 			}
 		}

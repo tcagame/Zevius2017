@@ -7,7 +7,7 @@ PTR( Player );
 
 class EnemyBragzakato : public Enemy {
 public:
-	EnemyBragzakato( const Vector& pos, PlayerPtr player );
+	EnemyBragzakato( const Vector& pos, PlayerPtr player, ImagePtr small_1 );
 	virtual ~EnemyBragzakato( );
 private:
 	void act( );

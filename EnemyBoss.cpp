@@ -6,10 +6,9 @@
 const int BOSS_GRAPH_SIZE = 96;
 const int ANIM_NUM = 7;
 
-EnemyBoss::EnemyBoss( const Vector& pos ) :
-Enemy( pos, 32, 5000 ) {
-	DrawerPtr drawer = Drawer::getTask( );
-	_image = drawer->createImage( "enemy/enemy_boss.png" );
+EnemyBoss::EnemyBoss( const Vector& pos, ImagePtr boss ) :
+Enemy( pos, 32, 5000 ),
+_image( boss ) {
 }
 
 
