@@ -5,7 +5,7 @@
 
 //çÇìá
 
-const Vector MOVE_SPEED( -1, 0 );
+const Vector MOVE_SPEED( -3, 0 );
 const double RANGE_UP = 200;
 const double RANGE_DOWN = 600;
 const double ACCEL = 0.3;
