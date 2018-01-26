@@ -29,10 +29,9 @@ void Armoury::update( MilitaryPtr military ) {
 	}
 }
 
-void Armoury::draw( ) const {
-	int camera_x = Game::getTask( )->getGameCount( );
+void Armoury::draw( int camera ) const {
 	for ( PlayerShotPtr shot : _shots ) {
-		shot->draw( camera_x );
+		shot->draw( camera );
 	}
 }
 

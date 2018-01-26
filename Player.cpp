@@ -7,7 +7,7 @@
 #include "define.h"
 #include "ScenePlay.h"
 #include "Armoury.h"
-#include "Game.h"
+#include "Camera.h"
 
 //プレイヤーの初期位置
 const double START_X = 50;
@@ -19,9 +19,10 @@ const double MOVE_SPEED = 3.5;
 //プレイヤーアニメーション
 const int ANIM_NUM = 6;
 
-Player::Player( ArmouryPtr armoury ) :
+Player::Player( ArmouryPtr armoury, CameraPtr camera ) :
 Character( START_POS, NORMAL_GRAPH_SIZE / 2 ),
-_armoury( armoury ), 
+_armoury( armoury ),
+_camera( camera ),
 _game_over( false ) {
 	DrawerPtr drawer = Drawer::getTask( );
 	_image = drawer->createImage( "player/sol_valou.png" );
@@ -62,10 +63,9 @@ void Player::actOnMove( ) {
 	}
 
 	Vector pos = getPos( );
-	int camera_x = Game::getTask( )->getGameCount( );
 	//プレイヤーの移動範囲
-	int left = camera_x;
-	int right = camera_x + SCREEN_WIDTH - NORMAL_GRAPH_SIZE;
+	int left = _camera->getCameraPos( );
+	int right = _camera->getCameraPos( ) + SCREEN_WIDTH - NORMAL_GRAPH_SIZE;
 	if ( pos.x + vec.x <= left ) {
 		vec.x = left - pos.x;
 	}
@@ -106,7 +106,7 @@ void Player::draw( int camera_x ) const {
 	int sy2 = sy1 + CHARACTER_SIZE;
 	_image->setPos( sx1, sy1, sx2, sy2 );
 	_image->draw( );
-	_armoury->draw( );
+	_armoury->draw( camera_x );
 }
 
 void Player::setFinished( bool finish ) {

@@ -6,10 +6,11 @@
 
 PTR( Image );
 PTR( Armoury );
+PTR( Camera );
 
 class Player : public Character {
 public:
-	Player( ArmouryPtr armoury );
+	Player( ArmouryPtr armoury, CameraPtr camera );
 	virtual ~Player( );
 public:
 	void draw( int camera_x ) const;
@@ -21,6 +22,7 @@ private:
 	void actOnAttack( );
 	void actOnDead( );
 private:
+	CameraPtr _camera;
 	ImagePtr _image;
 	ArmouryPtr _armoury;
 	Vector _pos;

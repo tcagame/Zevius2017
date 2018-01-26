@@ -14,14 +14,16 @@
 #include "Drawer.h"
 #include "Image.h"
 #include "Game.h"
+#include "Camera.h"
 
 #include <array>
 
 const int LOAD_RANGE_X = 2000;
 
-Military::Military( PlayerPtr player ) :
+Military::Military( PlayerPtr player, CameraPtr camera ) :
 _load_x( 0 ),
-_player( player ) {
+_player( player ),
+_camera( camera ) {
 	EnemyDataPtr enemy_data = EnemyDataPtr( new EnemyData0 );
 	_enemy_data = enemy_data->getEnemyData( );
 	DrawerPtr drawer = Drawer::getTask( );
@@ -43,10 +45,9 @@ void Military::update( ) {
 }
 
 void Military::loadEnemy( ) {
-	GamePtr game = Game::getTask( );
 	while ( _load_x < MAP_WIDTH_NUM ) {
 		int x = _load_x * MAP_SIZE;
-		if ( x > game->getGameCount( ) + LOAD_RANGE_X ) {
+		if ( x > _camera->getCameraPos( ) + LOAD_RANGE_X ) {
 			//プレイヤーから遠い場合ロードしない
 			break;
 		}
@@ -119,13 +120,11 @@ EnemyPtr Military::getOverLappedEnemy( CharacterPtr character ) const {
 }
 
 void Military::draw( ) {
-	GamePtr game = Game::getTask( );
-	int camera_x = game->getGameCount( );
 	for ( EnemyPtr enemy : _enemies ) {
-		enemy->draw( camera_x );
+		enemy->draw( _camera->getCameraPos( ) );
 	}
 	for ( EnemyExplosionPtr explosion : _explosions ) {
-		explosion->draw( camera_x );
+		explosion->draw( _camera->getCameraPos( ) );
 	}
 }
 

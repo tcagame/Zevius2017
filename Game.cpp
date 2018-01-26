@@ -12,8 +12,7 @@ GamePtr Game::getTask( ) {
 }
 
 Game::Game( ) :
-_next( Scene::NEXT_TITLE ),
-_count( 0 ) {
+_next( Scene::NEXT_TITLE ) {
 }
 
 
@@ -25,8 +24,6 @@ void Game::initialize( ) {
 }
 
 void Game::update( ) {
-	_count++;
-
 	Drawer::getTask( )->flip( );
 	_scene->draw( );
 	_next = _scene->update( );
@@ -37,7 +34,6 @@ void Game::changeScene( ) {
 	if ( _next == Scene::NEXT_CONTINUE ) {
 		return;
 	}
-	_count = 0;
 	switch( _next ) {
 	case Scene::NEXT_TITLE:
 		_scene = ScenePtr( new SceneTitle( ) );
@@ -49,8 +45,4 @@ void Game::changeScene( ) {
 		_scene = ScenePtr( new SceneResult( ) );
 		break;
 	}
-}
-
-int Game::getGameCount( ) {
-	return _count;
 }

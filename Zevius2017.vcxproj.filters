@@ -47,6 +47,7 @@
     <ClCompile Include="SceneResult.cpp">
       <Filter>Scene</Filter>
     </ClCompile>
+    <ClCompile Include="Camera.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h" />
@@ -95,6 +96,7 @@
     <ClInclude Include="SceneResult.h">
       <Filter>Scene</Filter>
     </ClInclude>
+    <ClInclude Include="Camera.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Enemy">

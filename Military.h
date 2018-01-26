@@ -17,10 +17,11 @@ PTR( EnemyToroid );
 PTR( EnemyBoss );
 PTR( EnemyExplosion );
 PTR( Armoury );
+PTR( Camera );
 
 class Military {
 public:
-	Military( PlayerPtr player );
+	Military( PlayerPtr player, CameraPtr camera );
 	virtual ~Military( );
 public:
 	void update( );
@@ -33,6 +34,7 @@ private:
 	void loadEnemy( );
 	void updateEnemy( );
 private:
+	CameraPtr _camera;
 	PlayerPtr _player;
 	std::array< char, MAP_WIDTH_NUM * MAP_HEIGHT_NUM + 1 > _enemy_data;
 	std::list< EnemyPtr > _enemies;

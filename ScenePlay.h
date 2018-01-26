@@ -9,6 +9,7 @@ PTR( Military );
 PTR( Image );
 PTR( Enemy );
 PTR( Armoury );
+PTR( Camera );
 
 class ScenePlay : public Scene {
 public:
@@ -23,6 +24,7 @@ private:
 	MilitaryPtr _military;
 	ArmouryPtr _armoury;
 	ImagePtr _image;
+	CameraPtr _camera;
 	std::list< EnemyPtr > _enemies;
 };
 

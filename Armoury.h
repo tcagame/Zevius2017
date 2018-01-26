@@ -12,7 +12,7 @@ public:
 	virtual ~Armoury( );
 public:
 	void update( MilitaryPtr military );
-	void draw( ) const;
+	void draw( int camera ) const;
 	void addShot( PlayerShotPtr shot );
 private:
 	std::list< PlayerShotPtr > _shots;
