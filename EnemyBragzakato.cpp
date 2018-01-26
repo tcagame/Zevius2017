@@ -5,7 +5,7 @@
 #include "Player.h"
 
 //ŽRˆü
-const double BRAGZAKATO_VEC = 2;
+const double BRAGZAKATO_VEC = 3;
 const double ATTACK_RANGE = 100;
 
 EnemyBragzakato::EnemyBragzakato( const Vector& pos, PlayerPtr player, ImagePtr small_1 ) :
