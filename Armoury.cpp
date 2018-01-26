@@ -2,7 +2,6 @@
 #include "Military.h"
 #include "PlayerShot.h"
 #include "Enemy.h"
-#include "Game.h"
 
 
 Armoury::Armoury( ) {
@@ -20,7 +19,7 @@ void Armoury::update( MilitaryPtr military ) {
 		PlayerShotPtr shot = *ite;
 		shot->update( );
 		EnemyPtr enemy = _military->getOverLappedEnemy( shot );
-		if ( enemy != EnemyPtr( ) ) {
+		if ( enemy != EnemyPtr( )  && !enemy->isAttackCharacter( ) ) {
 			ite = _shots.erase( ite );
 			enemy->erase( );
 			continue;

@@ -4,17 +4,20 @@
 #include "define.h"
 #include "Player.h"
 #include "Time.h"
+#include "Military.h"
+#include "EnemyGaruzakatoAttack.h"
 
 //ŠÔ‹{
 const double GARUZA_VEC = 4;
 const int TIMER = 240;
 
 
-EnemyGaruzakato::EnemyGaruzakato( const Vector& pos, PlayerPtr player, ImagePtr small_1 ) :
-Enemy( pos, SMALL_GRAPH_SIZE / 4, 30 ),
+EnemyGaruzakato::EnemyGaruzakato( const Vector& pos, PlayerPtr player, ImagePtr small_1, MilitaryPtr military ) :
+Enemy( pos, SMALL_GRAPH_SIZE / 4, 30, false ),
 _time( TIMER ), 
 _player( player ),
-_image( small_1 ){
+_image( small_1 ), 
+_military( military ) {
 }
 
 
@@ -31,8 +34,18 @@ void EnemyGaruzakato::act( ) {
 
 	setVec( vec );
 	if ( _time < 0 ) {
-		//”š”­H
-		setVec( Vector( ) );
+		erase( );
+		Vector axis( 0, 0, 1 );
+		Matrix rots[ ] = {
+			Matrix::makeTransformRotation( axis, 0 ),
+			Matrix::makeTransformRotation( axis, PI / 4 ),
+			Matrix::makeTransformRotation( axis, PI / 6 ),
+			Matrix::makeTransformRotation( axis * -1, PI / 4 ),
+			Matrix::makeTransformRotation( axis * -1, PI / 6 )
+		};
+		for ( int i = 0; i < 5; i++ ) {
+			_military->addEnemy( EnemyGaruzakatoAttackPtr( new EnemyGaruzakatoAttack( pos, rots[ i ].multiply( Vector( -5, 0 ) ) ) ) );
+		}
 	}
 }
 

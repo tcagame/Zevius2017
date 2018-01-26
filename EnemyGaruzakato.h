@@ -4,10 +4,12 @@
 
 PTR( Image );
 PTR( Player );
+PTR( Military );
+PTR( EnemyGaruzakatoAttack );
 
 class EnemyGaruzakato : public Enemy {
 public:
-	EnemyGaruzakato( const Vector& pos, PlayerPtr player, ImagePtr small_1 );
+	EnemyGaruzakato( const Vector& pos, PlayerPtr player, ImagePtr small_1, MilitaryPtr military );
 	virtual ~EnemyGaruzakato( );
 private:
 	void act( );
@@ -15,6 +17,7 @@ private:
 private:
 	ImagePtr _image;
 	PlayerPtr _player;
+	MilitaryPtr _military;
 	int _time;
 };
 

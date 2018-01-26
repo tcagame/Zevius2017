@@ -7,7 +7,7 @@ const int BOSS_GRAPH_SIZE = 96;
 const int ANIM_NUM = 7;
 
 EnemyBoss::EnemyBoss( const Vector& pos, ImagePtr boss ) :
-Enemy( pos, 32, 5000 ),
+Enemy( pos, 32, 5000, false ),
 _image( boss ) {
 }
 

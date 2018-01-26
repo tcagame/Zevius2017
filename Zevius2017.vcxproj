@@ -165,6 +165,7 @@
     <ClCompile Include="EnemyBragzakato.cpp" />
     <ClCompile Include="EnemyExplosion.cpp" />
     <ClCompile Include="EnemyGaruzakato.cpp" />
+    <ClCompile Include="EnemyGaruzakatoAttack.cpp" />
     <ClCompile Include="EnemyTorkan.cpp" />
     <ClCompile Include="EnemyToroid.cpp" />
     <ClCompile Include="EnemyWall.cpp" />
@@ -196,6 +197,7 @@
     <ClInclude Include="EnemyBragzakato.h" />
     <ClInclude Include="EnemyExplosion.h" />
     <ClInclude Include="EnemyGaruzakato.h" />
+    <ClInclude Include="EnemyGaruzakatoAttack.h" />
     <ClInclude Include="EnemyTorkan.h" />
     <ClInclude Include="EnemyToroid.h" />
     <ClInclude Include="EnemyWall.h" />

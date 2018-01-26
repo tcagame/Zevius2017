@@ -15,7 +15,7 @@
 #include "Image.h"
 #include "Game.h"
 #include "Camera.h"
-
+#include <memory>
 #include <array>
 
 const int LOAD_RANGE_X = 2000;
@@ -59,7 +59,7 @@ void Military::loadEnemy( ) {
 				addEnemy( EnemyTorkanPtr( new EnemyTorkan( Vector( x, y ), _small_2 ) ) );
 				break;
 			case 'B':
-				addEnemy( EnemyGaruzakatoPtr( new EnemyGaruzakato( Vector( x, y ), _player, _small_1 ) ) );
+				addEnemy( EnemyGaruzakatoPtr( new EnemyGaruzakato( Vector( x, y ), _player, _small_1, shared_from_this( ) ) ) );
 				break;
 			case 'C':
 				addEnemy( EnemyBozalogramPtr( new EnemyBozalogram( Vector( x, y ), _medium ) ) );
@@ -93,6 +93,10 @@ void Military::updateEnemy( ) {
 		}
 		if( enemy->isFinished( ) ) {
 			addExplosion( EnemyExplosionPtr( new EnemyExplosion( enemy->getPos( ) ) ) );
+			ite = _enemies.erase( ite );
+			continue;
+		}
+		if ( enemy->getPos( ).x + NORMAL_GRAPH_SIZE < _camera->getCameraPos( ) ) {
 			ite = _enemies.erase( ite );
 			continue;
 		}

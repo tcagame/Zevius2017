@@ -12,7 +12,7 @@ const double ACCEL = 0.3;
 const double MAX_SPEED = 5;
 
 EnemyBozalogram::EnemyBozalogram( const Vector& pos, ImagePtr medium ) :
-Enemy( pos, NORMAL_GRAPH_SIZE / 2, 30 ),
+Enemy( pos, NORMAL_GRAPH_SIZE / 2, 30, false ),
 _flag( false ),
 _image( medium ) {
 	setVec( MOVE_SPEED );

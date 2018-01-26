@@ -19,7 +19,7 @@ PTR( EnemyExplosion );
 PTR( Armoury );
 PTR( Camera );
 
-class Military {
+class Military : public std::enable_shared_from_this< Military > {
 public:
 	Military( PlayerPtr player, CameraPtr camera );
 	virtual ~Military( );

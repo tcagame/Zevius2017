@@ -48,6 +48,7 @@
       <Filter>Scene</Filter>
     </ClCompile>
     <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="EnemyGaruzakatoAttack.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h" />
@@ -97,6 +98,7 @@
       <Filter>Scene</Filter>
     </ClInclude>
     <ClInclude Include="Camera.h" />
+    <ClInclude Include="EnemyGaruzakatoAttack.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Enemy">

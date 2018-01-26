@@ -1,8 +1,9 @@
 #include "Enemy.h"
 
-Enemy::Enemy( const Vector& pos , double radius, int score ) :
+Enemy::Enemy( const Vector& pos , double radius, int score, bool attack ) :
 Character( pos, radius ),
-_erase( false ) {
+_erase( false ),
+_attack( attack ) {
 }
 
 
@@ -15,4 +16,8 @@ bool Enemy::isFinished( ) {
 
 void Enemy::erase( ) {
 	_erase = true;
+}
+
+bool Enemy::isAttackCharacter( ) {
+	return _attack;
 }

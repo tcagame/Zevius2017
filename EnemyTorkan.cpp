@@ -22,7 +22,7 @@ int Getrandom(int min, int max)
 
 
 EnemyTorkan::EnemyTorkan( const Vector& pos, ImagePtr small_2 ) :
-Enemy( pos, SMALL_GRAPH_SIZE / 2, 500 ),
+Enemy( pos, SMALL_GRAPH_SIZE / 2, 500, false ),
 _remove( false ),
 _image( small_2 ){
 }
