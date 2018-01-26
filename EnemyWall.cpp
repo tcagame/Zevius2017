@@ -7,7 +7,7 @@ const int ANIM_NUM = 7;
 const Vector MOVE_SPEED( -2, 0 );
 
 EnemyWall::EnemyWall( const Vector& pos, ImagePtr medium ) :
-Enemy( pos, 32, 0 ),
+Enemy( pos, NORMAL_GRAPH_SIZE / 2, 0 ),
 _count( 0 ),
 _image( medium ){
 

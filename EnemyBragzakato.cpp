@@ -9,7 +9,7 @@ const double BRAGZAKATO_VEC = 2;
 const double ATTACK_RANGE = 100;
 
 EnemyBragzakato::EnemyBragzakato( const Vector& pos, PlayerPtr player, ImagePtr small_1 ) :
-Enemy( pos, 32, 500 ),
+	Enemy( pos, SMALL_GRAPH_SIZE / 2, 500 ),
 _attack( false ),
 _count( 0 ),
 _image( small_1 ),

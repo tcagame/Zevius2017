@@ -11,7 +11,7 @@ const int TIMER = 500;
 
 
 EnemyGaruzakato::EnemyGaruzakato( const Vector& pos, PlayerPtr player, ImagePtr small_1 ) :
-Enemy( pos, 32 , 30 ),
+Enemy( pos, SMALL_GRAPH_SIZE / 4, 30 ),
 _time( TIMER ), 
 _player( player ),
 _image( small_1 ){

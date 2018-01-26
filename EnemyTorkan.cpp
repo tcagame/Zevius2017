@@ -22,7 +22,7 @@ int Getrandom(int min, int max)
 
 
 EnemyTorkan::EnemyTorkan( const Vector& pos, ImagePtr small_2 ) :
-Enemy( pos, 32, 500 ),
+Enemy( pos, SMALL_GRAPH_SIZE / 2, 500 ),
 _remove( false ),
 _image( small_2 ){
 }
@@ -52,7 +52,7 @@ void EnemyTorkan::act( ) {
 }
 
 void EnemyTorkan::draw( int camera_x ) const{
-	_image->setRect( 16 * 0, 0, 16, 16 );
+	_image->setRect( SMALL_GRAPH_SIZE * 0, 0, SMALL_GRAPH_SIZE, SMALL_GRAPH_SIZE );
 	_image->setPos( ( int )getPos( ).x - camera_x, ( int )getPos( ).y );
 	_image->draw( );
 }
