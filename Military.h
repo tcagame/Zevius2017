@@ -13,6 +13,7 @@ PTR( EnemyGaruzakato );
 PTR( EnemyBozalogram );
 PTR( EnemyBragzakato );
 PTR( EnemyWall );
+PTR( EnemyToroid );
 PTR( EnemyBoss );
 PTR( EnemyExplosion );
 PTR( Armoury );

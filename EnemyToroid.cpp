@@ -7,7 +7,8 @@ const int ANIM_NUM = 7;
 
 EnemyToroid::EnemyToroid( const Vector& pos, ImagePtr small_2 ) :
 Enemy( pos, SMALL_GRAPH_SIZE / 2, 30 ),
-_count( 0 ) {
+_count( 0 ),
+_image( small_2 ){
 
 }
 

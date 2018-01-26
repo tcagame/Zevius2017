@@ -8,6 +8,7 @@
 #include "EnemyBozalogram.h"
 #include "EnemyBragzakato.h"
 #include "EnemyWall.h"
+#include "EnemyToroid.h"
 #include "EnemyBoss.h"
 #include "EnemyExplosion.h"
 #include "Drawer.h"
@@ -67,6 +68,9 @@ void Military::loadEnemy( ) {
 				break;
 			case 'E':
 				addEnemy( EnemyWallPtr( new EnemyWall( Vector( x, y ), _medium ) ) );
+				break;
+			case 'F':
+				addEnemy( EnemyToroidPtr( new EnemyToroid( Vector( x, y ), _small_2 ) ) );
 				break;
 			case '#':
 				addEnemy( EnemyBossPtr( new EnemyBoss( Vector( x, y ), _boss ) ) );
