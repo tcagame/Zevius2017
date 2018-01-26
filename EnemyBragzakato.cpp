@@ -8,13 +8,13 @@
 const double BRAGZAKATO_VEC = 2;
 const double ATTACK_RANGE = 100;
 
-EnemyBragzakato::EnemyBragzakato( const Vector& pos, PlayerPtr player ) :
-Enemy( pos, 32, 500 ),
+EnemyBragzakato::EnemyBragzakato( const Vector& pos, PlayerPtr player, ImagePtr small_1 ) :
+	Enemy( pos, SMALL_GRAPH_SIZE / 2, 500 ),
 _attack( false ),
-_count( 0 ) {
-	_player = player;
-	DrawerPtr drawer = Drawer::getTask( );
-	_image = drawer->createImage( "enemy/enemy_small1.png" );
+_count( 0 ),
+_image( small_1 ),
+_player( player ){
+
 }
 
    

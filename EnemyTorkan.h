@@ -6,7 +6,7 @@ PTR( Image );
 
 class EnemyTorkan : public Enemy {
 public:
-	EnemyTorkan( const Vector& pos );
+	EnemyTorkan( const Vector& pos, ImagePtr small_2 );
 	virtual ~EnemyTorkan( );
 private:
 	void act( );

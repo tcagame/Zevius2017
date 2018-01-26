@@ -10,12 +10,11 @@ const double GARUZA_VEC = 1;
 const int TIMER = 500;
 
 
-EnemyGaruzakato::EnemyGaruzakato( const Vector& pos, PlayerPtr player ) :
-Enemy( pos, 32 , 30 ),
-_time( TIMER ){
-	DrawerPtr drawer = Drawer::getTask( );
-	_image = drawer->createImage( "enemy/enemy_small1.png" );
-	_player = player;
+EnemyGaruzakato::EnemyGaruzakato( const Vector& pos, PlayerPtr player, ImagePtr small_1 ) :
+Enemy( pos, SMALL_GRAPH_SIZE / 4, 30 ),
+_time( TIMER ), 
+_player( player ),
+_image( small_1 ){
 }
 
 

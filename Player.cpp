@@ -15,14 +15,12 @@ const double START_Y = 400;
 const Vector START_POS( START_X, START_Y );
 //プレイヤーの移動速度
 const double MOVE_SPEED = 3.5;
-//プレイヤーの移動制限
-const int RADIUS = 32;
 
 //プレイヤーアニメーション
 const int ANIM_NUM = 6;
 
 Player::Player( ArmouryPtr armoury ) :
-Character( START_POS, RADIUS ),
+Character( START_POS, NORMAL_GRAPH_SIZE / 2 ),
 _armoury( armoury ), 
 _game_over( false ) {
 	DrawerPtr drawer = Drawer::getTask( );
