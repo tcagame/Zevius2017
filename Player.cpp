@@ -18,6 +18,9 @@ const double MOVE_SPEED = 3.5;
 //プレイヤーの移動制限
 const int RADIUS = 32;
 
+//プレイヤーアニメーション
+const int ANIM_NUM = 6;
+
 Player::Player( ArmouryPtr armoury ) :
 Character( START_POS, RADIUS ),
 _armoury( armoury ), 
@@ -36,8 +39,10 @@ Player::~Player( ) {
 
 
 void Player::act( ) {
+	_count++;
 	actOnMove( );
 	actOnAttack( );
+	actOnDead( );
 }
 
 void Player::actOnMove( ) {
@@ -87,6 +92,11 @@ void Player::actOnAttack( ) {
 	if ( keyboard->isPushKey( "Z" ) ) {
 		_armoury->addShot( PlayerShotPtr( new PlayerShot( Vector( getPos( ).x, getPos( ).y + SMALL_GRAPH_SIZE / 2 ) ) ) );
 	}
+}
+
+
+void Player::actOnDead( ) {
+		_image->setRect( 0, NORMAL_GRAPH_SIZE * ( _count % ANIM_NUM ) , NORMAL_GRAPH_SIZE, NORMAL_GRAPH_SIZE/*スタートX、スタートY、大きさX、大きさY*/);
 }
 
 void Player::draw( int camera_x ) const {
