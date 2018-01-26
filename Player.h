@@ -19,10 +19,12 @@ private:
 	void act( );
 	void actOnMove( );
 	void actOnAttack( );
+	void actOnDead( );
 private:
 	ImagePtr _image;
 	ArmouryPtr _armoury;
 	Vector _pos;
 	bool _game_over;
+	int _count;
 };
 
