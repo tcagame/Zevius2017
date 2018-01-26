@@ -17,5 +17,6 @@ private:
 private:
 	ImagePtr _image;
 	Vector _pos;
+	int _count;
 };
 
