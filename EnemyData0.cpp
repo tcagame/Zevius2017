@@ -14,7 +14,7 @@ EnemyData0::EnemyData0( ) {
 		"                                           C        D              C     C             E    A    C    C        D    E         C                       "
 		"                                           C   A    D              C     C     A       E         C    C    A   D    E         C                       "
 		"                                           C             E    A    C     C        D         A    C    C                       C                       "
-		"                            #              C   A        BE    A    C     C     A  D             BC    C     A      B         BC    #                  "
+		"                                           C   A        BE    A    C     C     A  D             BC    C     A      B         BC    #                  "
 		"                                           C             E    A    C     C        D         A    C    C                       C                       "
 		"                                           C   A    D              C     C     A       E         C    C    A   D    E         C                       "
 		"                                           C        D              C     C             E    A    C    C        D    E         C                       "
