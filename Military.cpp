@@ -65,7 +65,7 @@ void Military::loadEnemy( ) {
 				addEnemy( EnemyBozalogramPtr( new EnemyBozalogram( Vector( x, y ), _medium ) ) );
 				break;
 			case 'D':
-				addEnemy( EnemyBragzakatoPtr( new EnemyBragzakato( Vector( x, y ), _player, _small_1 ) ) );
+				addEnemy( EnemyBragzakatoPtr( new EnemyBragzakato( Vector( x, y ), _player, _small_1, shared_from_this( ) ) ) );
 				break;
 			case 'E':
 				addEnemy( EnemyWallPtr( new EnemyWall( Vector( x, y ), _medium ) ) );

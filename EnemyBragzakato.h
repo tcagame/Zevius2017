@@ -4,10 +4,11 @@
 
 PTR( Image );
 PTR( Player );
+PTR( Military );
 
 class EnemyBragzakato : public Enemy {
 public:
-	EnemyBragzakato( const Vector& pos, PlayerPtr player, ImagePtr small_1 );
+	EnemyBragzakato( const Vector& pos, PlayerPtr player, ImagePtr small_1, MilitaryPtr military );
 	virtual ~EnemyBragzakato( );
 private:
 	void act( );
@@ -16,6 +17,7 @@ private:
 	ImagePtr _image;
 	Vector _pos;
 	PlayerPtr _player;
+	MilitaryPtr _military;
 	bool _attack;
 	int _count;
 };

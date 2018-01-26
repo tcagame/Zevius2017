@@ -3,17 +3,22 @@
 #include "Drawer.h"
 #include "define.h"
 #include "Player.h"
+#include "EnemyGaruzakatoAttack.h"
+#include "Military.h"
 
 //山蔭
 const double BRAGZAKATO_VEC = 3;
 const double ATTACK_RANGE = 100;
 
-EnemyBragzakato::EnemyBragzakato( const Vector& pos, PlayerPtr player, ImagePtr small_1 ) :
-	Enemy( pos, SMALL_GRAPH_SIZE / 2, 500, false ),
+PTR( EnemyGaruzakatoAttack );
+
+EnemyBragzakato::EnemyBragzakato( const Vector& pos, PlayerPtr player, ImagePtr small_1, MilitaryPtr military ) :
+Enemy( pos, SMALL_GRAPH_SIZE / 2, 500, false ),
 _attack( false ),
 _count( 0 ),
 _image( small_1 ),
-_player( player ){
+_player( player ),
+_military( military ) {
 
 }
 
@@ -38,11 +43,22 @@ void EnemyBragzakato::act( ) {
 		setVec( Vector( ) );
 		DrawerPtr drawer = Drawer::getTask( );
 		if ( _count % 120 == 0 ) {
-			drawer->drawString( 0, 0, "どおおおおおおおん" );//デバッグメッセージ
+			erase( );
+			Vector axis( 0, 0, 1 );
+			Matrix rots[ ] = {
+				Matrix::makeTransformRotation( axis, 0 ),
+				Matrix::makeTransformRotation( axis, PI / 4 ),
+				Matrix::makeTransformRotation( axis, PI / 6 ),
+				Matrix::makeTransformRotation( axis * -1, PI / 4 ),
+				Matrix::makeTransformRotation( axis * -1, PI / 6 )
+			};
+			for ( int i = 0; i < 5; i++ ) {
+				_military->addEnemy( EnemyGaruzakatoAttackPtr( new EnemyGaruzakatoAttack( pos, rots[ i ].multiply( Vector( -5, 0 ) ) ) ) );
+			}
 		}
 	}
-
 }
+
 
 void EnemyBragzakato::draw( int camera_x ) const{
 	_image->setRect( SMALL_GRAPH_SIZE * 0, SMALL_GRAPH_SIZE * 3, SMALL_GRAPH_SIZE, SMALL_GRAPH_SIZE );

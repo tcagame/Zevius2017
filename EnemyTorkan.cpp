@@ -35,9 +35,6 @@ void EnemyTorkan::act( ) {
 	Vector pos = getPos( );
 	Vector vec = T_VEC;
 
-	
-
-	
 	if ( pos.x < REMOVE_POS.x && _remove == false ) {
 		_remove = true;
 	}
