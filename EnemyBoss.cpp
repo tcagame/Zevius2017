@@ -21,6 +21,6 @@ void EnemyBoss::act( ) {
 
 void EnemyBoss::draw( int camera_x ) const{
 	_image->setRect( BOSS_GRAPH_SIZE * ( _count % ANIM_NUM ), 0, BOSS_GRAPH_SIZE, BOSS_GRAPH_SIZE );
-	_image->setPos( getPos( ).x, getPos( ).y );
+	_image->setPos( getPos( ).x - camera_x, getPos( ).y );
 	_image->draw( );
 }
