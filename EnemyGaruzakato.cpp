@@ -6,7 +6,7 @@
 #include "Time.h"
 
 //ŠÔ‹{
-const double GARUZA_VEC = 1;
+const double GARUZA_VEC = 4;
 const int TIMER = 500;
 
 
