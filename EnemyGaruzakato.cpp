@@ -6,8 +6,8 @@
 #include "Time.h"
 
 //ŠÔ‹{
-const double GARUZA_VEC = 1;
-const int TIMER = 500;
+const double GARUZA_VEC = 4;
+const int TIMER = 240;
 
 
 EnemyGaruzakato::EnemyGaruzakato( const Vector& pos, PlayerPtr player, ImagePtr small_1 ) :
@@ -28,7 +28,12 @@ void EnemyGaruzakato::act( ) {
 	Vector dir = ( target_pos - pos ).normalize( );
 	Vector vec = dir * GARUZA_VEC;
 
+
 	setVec( vec );
+	if ( _time < 0 ) {
+		//”š”­H
+		setVec( Vector( ) );
+	}
 }
 
 void EnemyGaruzakato::draw( int camera_x ) const{
