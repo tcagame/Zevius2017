@@ -97,7 +97,7 @@ void Military::updateEnemy( ) {
 		EnemyPtr enemy = *ite;
 		enemy->update( );
 		if ( getOverLappedEnemy( _player ) != EnemyPtr( ) ) {
-			//_player->setFinished( true );
+			_player->setFinished( true );
 		}
 		if( enemy->isFinished( ) ) {
 			addExplosion( EnemyExplosionPtr( new EnemyExplosion( enemy->getPos( ), enemy->getSize( ) ) ) );
