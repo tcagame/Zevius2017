@@ -12,11 +12,12 @@ const double GARUZA_VEC = 4;
 const int TIMER = 240;
 
 
-EnemyGaruzakato::EnemyGaruzakato( const Vector& pos, PlayerPtr player, ImagePtr small_1, MilitaryPtr military ) :
+EnemyGaruzakato::EnemyGaruzakato( const Vector& pos, PlayerPtr player, ImagePtr small_1, MilitaryPtr military, ImagePtr attack_img ) :
 Enemy( pos, SMALL_GRAPH_SIZE / 4, 30, false ),
 _time( TIMER ), 
 _player( player ),
 _image( small_1 ), 
+_attack_img( attack_img ),
 _military( military ) {
 }
 
@@ -44,7 +45,7 @@ void EnemyGaruzakato::act( ) {
 			Matrix::makeTransformRotation( axis * -1, PI / 6 )
 		};
 		for ( int i = 0; i < 5; i++ ) {
-			_military->addEnemy( EnemyGaruzakatoAttackPtr( new EnemyGaruzakatoAttack( pos, rots[ i ].multiply( Vector( -5, 0 ) ) ) ) );
+			_military->addEnemy( EnemyGaruzakatoAttackPtr( new EnemyGaruzakatoAttack( pos, rots[ i ].multiply( Vector( -5, 0 ) ), _attack_img ) ) );
 		}
 	}
 }

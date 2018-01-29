@@ -5,7 +5,8 @@
 
 const int ANIM_NUM = 9;
 
-EnemyExplosion::EnemyExplosion( Vector& pos ) :
+EnemyExplosion::EnemyExplosion( Vector& pos, int size ) :
+_size( size ),
 _pos( pos ),
 _count( 0 ) {
 	DrawerPtr drawer = Drawer::getTask( );
@@ -23,7 +24,9 @@ bool EnemyExplosion::isFinished( ) {
 
 void EnemyExplosion::draw( int camera_x ) {
 	_image->setRect( NORMAL_GRAPH_SIZE * _count, NORMAL_GRAPH_SIZE * 3, NORMAL_GRAPH_SIZE, NORMAL_GRAPH_SIZE );
-	_image->setPos( ( int )_pos.x - camera_x, ( int )_pos.y );
+	int sx = ( int )_pos.x - camera_x;
+	int sy = ( int )_pos.y;
+	_image->setPos( sx, sy, sx + _size, sy + _size );
 	_image->draw( );
 	_count++;
 }

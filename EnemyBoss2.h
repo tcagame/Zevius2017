@@ -7,10 +7,10 @@ PTR( Camera );
 PTR( Military );
 PTR( EnemyBossAttack );
 
-class EnemyBoss : public Enemy {
+class EnemyBoss2 : public Enemy {
 public:
-	EnemyBoss( const Vector& pos, ImagePtr boss, CameraPtr camera, MilitaryPtr military, ImagePtr attack_img );
-	virtual ~EnemyBoss( );
+	EnemyBoss2( const Vector& pos, ImagePtr boss, CameraPtr camera, MilitaryPtr military, ImagePtr attack_img );
+	virtual ~EnemyBoss2( );
 public:
 	void act( );
 	void draw( int camera_x ) const;

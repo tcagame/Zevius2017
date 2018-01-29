@@ -8,6 +8,7 @@
 #include "ScenePlay.h"
 #include "Armoury.h"
 #include "Camera.h"
+#include "Sound.h"
 
 //プレイヤーの初期位置
 const double START_X = 50;
@@ -19,12 +20,16 @@ const double MOVE_SPEED = 3.5;
 //プレイヤーアニメーション
 const int ANIM_NUM = 6;
 
+PTR( Sound );
+
 Player::Player( ArmouryPtr armoury, CameraPtr camera ) :
 Character( START_POS, NORMAL_GRAPH_SIZE / 2 ),
 _armoury( armoury ),
 _camera( camera ),
 _game_over( false ) {
 	DrawerPtr drawer = Drawer::getTask( );
+	SoundPtr sound = Sound::getTask( );
+	sound->loadSE( "sound/xev_se_ZapperShoot.wav" );
 	_image = drawer->createImage( "player/sol_valou.png" );
 	int width = 0;
 	int height = 0;
@@ -88,6 +93,8 @@ void Player::actOnMove( ) {
 void Player::actOnAttack( ) {
 	KeyboardPtr keyboard = Keyboard::getTask( );
 	if ( keyboard->isPushKey( "Z" ) ) {
+		SoundPtr sound = Sound::getTask( );
+		sound->playSE( "sound/xev_se_ZapperShoot.wav" );
 		_armoury->addShot( PlayerShotPtr( new PlayerShot( Vector( getPos( ).x, getPos( ).y + SMALL_GRAPH_SIZE / 2 ) ) ) );
 	}
 }

@@ -40,15 +40,26 @@
     </ClCompile>
     <ClCompile Include="EnemyData.cpp" />
     <ClCompile Include="EnemyData0.cpp" />
-    <ClCompile Include="EnemyBoss.cpp">
-      <Filter>Enemy</Filter>
-    </ClCompile>
     <ClCompile Include="EnemyExplosion.cpp" />
     <ClCompile Include="SceneResult.cpp">
       <Filter>Scene</Filter>
     </ClCompile>
     <ClCompile Include="Camera.cpp" />
-    <ClCompile Include="EnemyGaruzakatoAttack.cpp" />
+    <ClCompile Include="EnemyBossAttack.cpp">
+      <Filter>EnemyBoss</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyGaruzakatoAttack.cpp">
+      <Filter>Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyBoss2.cpp">
+      <Filter>EnemyBoss</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyBoss3.cpp">
+      <Filter>EnemyBoss</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyBoss.cpp">
+      <Filter>EnemyBoss</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h" />
@@ -90,15 +101,26 @@
     </ClInclude>
     <ClInclude Include="EnemyData.h" />
     <ClInclude Include="EnemyData0.h" />
-    <ClInclude Include="EnemyBoss.h">
-      <Filter>Enemy</Filter>
-    </ClInclude>
     <ClInclude Include="EnemyExplosion.h" />
     <ClInclude Include="SceneResult.h">
       <Filter>Scene</Filter>
     </ClInclude>
     <ClInclude Include="Camera.h" />
-    <ClInclude Include="EnemyGaruzakatoAttack.h" />
+    <ClInclude Include="EnemyBossAttack.h">
+      <Filter>EnemyBoss</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyGaruzakatoAttack.h">
+      <Filter>Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyBoss2.h">
+      <Filter>EnemyBoss</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyBoss3.h">
+      <Filter>EnemyBoss</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyBoss.h">
+      <Filter>EnemyBoss</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Enemy">
@@ -106,6 +128,9 @@
     </Filter>
     <Filter Include="Scene">
       <UniqueIdentifier>{c73d55c3-31cd-45d5-acc7-ab05c0b8d240}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EnemyBoss">
+      <UniqueIdentifier>{e8088fce-850d-4a89-a2bb-e099ddd5102e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

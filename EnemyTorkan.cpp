@@ -1,15 +1,16 @@
 #include "EnemyTorkan.h"
 #include "Image.h"
 #include "Drawer.h"
+#include "Camera.h"
 #include "define.h"
 
 
 //èºìc
 
 const Vector T_VEC( -3, 0 );
-const Vector REMOVE_POS( 300, 0 );
+const Vector REMOVE_POS( 250, 0 );
 const Vector REMOVE_VEC( 3, 3 );
-const double HALF_POS = 600;
+const double HALF_POS = SCREEN_HEIGHT / 2;
 
 
 
@@ -21,10 +22,11 @@ int Getrandom(int min, int max)
 }
 
 
-EnemyTorkan::EnemyTorkan( const Vector& pos, ImagePtr small_2 ) :
+EnemyTorkan::EnemyTorkan( const Vector& pos, ImagePtr small_2, CameraPtr camera ) :
 Enemy( pos, SMALL_GRAPH_SIZE / 2, 500, false ),
 _remove( false ),
-_image( small_2 ){
+_image( small_2 ),
+_camera( camera ) {
 }
 
 
@@ -35,7 +37,7 @@ void EnemyTorkan::act( ) {
 	Vector pos = getPos( );
 	Vector vec = T_VEC;
 
-	if ( pos.x < REMOVE_POS.x && _remove == false ) {
+	if ( pos.x < REMOVE_POS.x + _camera->getCameraPos( ) && _remove == false ) {
 		_remove = true;
 	}
 	if ( _remove == true ) {

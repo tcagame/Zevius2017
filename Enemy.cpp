@@ -1,4 +1,5 @@
 #include "Enemy.h"
+#include "define.h"
 
 Enemy::Enemy( const Vector& pos , double radius, int score, bool attack ) :
 Character( pos, radius ),
@@ -16,6 +17,10 @@ bool Enemy::isFinished( ) {
 
 void Enemy::erase( ) {
 	_erase = true;
+}
+
+int Enemy::getSize( ) const {
+	return NORMAL_GRAPH_SIZE;
 }
 
 bool Enemy::isAttackCharacter( ) {

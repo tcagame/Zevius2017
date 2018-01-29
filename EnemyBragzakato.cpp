@@ -8,15 +8,16 @@
 
 //ŽRˆü
 const double BRAGZAKATO_VEC = 3;
-const double ATTACK_RANGE = 100;
+const double ATTACK_RANGE = 400;
 
 PTR( EnemyGaruzakatoAttack );
 
-EnemyBragzakato::EnemyBragzakato( const Vector& pos, PlayerPtr player, ImagePtr small_1, MilitaryPtr military ) :
+EnemyBragzakato::EnemyBragzakato( const Vector& pos, PlayerPtr player, ImagePtr small_1, MilitaryPtr military, ImagePtr attack_img ) :
 Enemy( pos, SMALL_GRAPH_SIZE / 2, 500, false ),
 _attack( false ),
 _count( 0 ),
 _image( small_1 ),
+_attack_img( attack_img ),
 _player( player ),
 _military( military ) {
 
@@ -34,26 +35,23 @@ void EnemyBragzakato::act( ) {
 	Vector vec = dir * BRAGZAKATO_VEC;
 
 	setVec( vec );
-	if ( ( target_pos - pos ).getLength( ) < ATTACK_RANGE ) {
+	if ( ( pos - target_pos ).getLength( ) < ATTACK_RANGE ) {
 		_attack = true;
-		//ày—ô‚·‚é‚æ
 	}
 	if ( _attack ) {
 		_count++;
 		setVec( Vector( ) );
 		DrawerPtr drawer = Drawer::getTask( );
-		if ( _count % 120 == 0 ) {
+		if ( _count % 20 == 0 ) {
 			erase( );
 			Vector axis( 0, 0, 1 );
 			Matrix rots[ ] = {
 				Matrix::makeTransformRotation( axis, 0 ),
-				Matrix::makeTransformRotation( axis, PI / 4 ),
 				Matrix::makeTransformRotation( axis, PI / 6 ),
-				Matrix::makeTransformRotation( axis * -1, PI / 4 ),
 				Matrix::makeTransformRotation( axis * -1, PI / 6 )
 			};
-			for ( int i = 0; i < 5; i++ ) {
-				_military->addEnemy( EnemyGaruzakatoAttackPtr( new EnemyGaruzakatoAttack( pos, rots[ i ].multiply( Vector( -5, 0 ) ) ) ) );
+			for ( int i = 0; i < 3; i++ ) {
+				_military->addEnemy( EnemyGaruzakatoAttackPtr( new EnemyGaruzakatoAttack( pos, rots[ i ].multiply( Vector( -5, 0 ) ), _attack_img ) ) );
 			}
 		}
 	}

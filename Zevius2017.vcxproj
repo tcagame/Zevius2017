@@ -161,6 +161,9 @@
     <ClCompile Include="Character.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="EnemyBoss.cpp" />
+    <ClCompile Include="EnemyBoss2.cpp" />
+    <ClCompile Include="EnemyBoss3.cpp" />
+    <ClCompile Include="EnemyBossAttack.cpp" />
     <ClCompile Include="EnemyBozalogram.cpp" />
     <ClCompile Include="EnemyBragzakato.cpp" />
     <ClCompile Include="EnemyExplosion.cpp" />
@@ -193,6 +196,9 @@
     <ClInclude Include="define.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="EnemyBoss.h" />
+    <ClInclude Include="EnemyBoss2.h" />
+    <ClInclude Include="EnemyBoss3.h" />
+    <ClInclude Include="EnemyBossAttack.h" />
     <ClInclude Include="EnemyBozalogram.h" />
     <ClInclude Include="EnemyBragzakato.h" />
     <ClInclude Include="EnemyExplosion.h" />

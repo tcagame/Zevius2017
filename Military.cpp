@@ -10,6 +10,8 @@
 #include "EnemyWall.h"
 #include "EnemyToroid.h"
 #include "EnemyBoss.h"
+#include "EnemyBoss2.h"
+#include "EnemyBoss3.h"
 #include "EnemyExplosion.h"
 #include "Drawer.h"
 #include "Image.h"
@@ -56,16 +58,16 @@ void Military::loadEnemy( ) {
 			int idx = _load_x + i * MAP_WIDTH_NUM;
 			switch( _enemy_data[ idx ] ) {
 			case 'A':
-				addEnemy( EnemyTorkanPtr( new EnemyTorkan( Vector( x, y ), _small_2 ) ) );
+				addEnemy( EnemyTorkanPtr( new EnemyTorkan( Vector( x, y ), _small_2, _camera ) ) );
 				break;
 			case 'B':
-				addEnemy( EnemyGaruzakatoPtr( new EnemyGaruzakato( Vector( x, y ), _player, _small_1, shared_from_this( ) ) ) );
+				addEnemy( EnemyGaruzakatoPtr( new EnemyGaruzakato( Vector( x, y ), _player, _small_1, shared_from_this( ), _medium ) ) );
 				break;
 			case 'C':
 				addEnemy( EnemyBozalogramPtr( new EnemyBozalogram( Vector( x, y ), _medium ) ) );
 				break;
 			case 'D':
-				addEnemy( EnemyBragzakatoPtr( new EnemyBragzakato( Vector( x, y ), _player, _small_1, shared_from_this( ) ) ) );
+				addEnemy( EnemyBragzakatoPtr( new EnemyBragzakato( Vector( x, y ), _player, _small_1, shared_from_this( ), _medium ) ) );
 				break;
 			case 'E':
 				addEnemy( EnemyWallPtr( new EnemyWall( Vector( x, y ), _medium ) ) );
@@ -73,8 +75,14 @@ void Military::loadEnemy( ) {
 			case 'F':
 				addEnemy( EnemyToroidPtr( new EnemyToroid( Vector( x, y ), _small_2 ) ) );
 				break;
-			case '#':
-				addEnemy( EnemyBossPtr( new EnemyBoss( Vector( x, y ), _boss ) ) );
+			case '0':
+				addEnemy( EnemyBossPtr( new EnemyBoss( Vector( x, y ), _boss, _camera, shared_from_this( ), _medium ) ) );
+				break;
+			case '2':
+				addEnemy( EnemyBoss2Ptr( new EnemyBoss2( Vector( x, y ), _boss, _camera, shared_from_this( ), _medium ) ) );
+				break;
+			case '3':
+				addEnemy( EnemyBoss3Ptr( new EnemyBoss3( Vector( x, y ), _boss, _camera, shared_from_this( ), _medium ) ) );
 				break;
 			}
 		}
@@ -89,14 +97,18 @@ void Military::updateEnemy( ) {
 		EnemyPtr enemy = *ite;
 		enemy->update( );
 		if ( getOverLappedEnemy( _player ) != EnemyPtr( ) ) {
-			_player->setFinished( true );
+			//_player->setFinished( true );
 		}
 		if( enemy->isFinished( ) ) {
-			addExplosion( EnemyExplosionPtr( new EnemyExplosion( enemy->getPos( ) ) ) );
+			addExplosion( EnemyExplosionPtr( new EnemyExplosion( enemy->getPos( ), enemy->getSize( ) ) ) );
 			ite = _enemies.erase( ite );
 			continue;
 		}
 		if ( enemy->getPos( ).x + NORMAL_GRAPH_SIZE < _camera->getCameraPos( ) ) {
+			ite = _enemies.erase( ite );
+			continue;
+		}
+		if ( enemy->getPos( ).y + NORMAL_GRAPH_SIZE < 0 || SCREEN_HEIGHT < enemy->getPos( ).y ) {
 			ite = _enemies.erase( ite );
 			continue;
 		}

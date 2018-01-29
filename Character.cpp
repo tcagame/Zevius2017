@@ -38,7 +38,10 @@ void Character::setVec( const Vector& vec ) {
 bool Character::isOverLapped( CharacterPtr target ) const{
 	bool result = false;
 	
-	if ( ( _pos - target->getPos( ) ).getLength( ) < _radius + target->getRadius( ) ) {
+	Vector self_pos = _pos + Vector( 1, 1 ) * _radius;
+	Vector target_pos = target->getPos( ) + Vector( 1, 1 ) * target->getRadius( );
+
+	if ( ( self_pos - target_pos ).getLength( ) < _radius + target->getRadius( ) ) {
 		result = true;
 	}
 

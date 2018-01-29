@@ -4,10 +4,10 @@
 
 PTR( Image );
 
-class EnemyGaruzakatoAttack : public Enemy {
+class EnemyBossAttack : public Enemy {
 public:
-	EnemyGaruzakatoAttack( const Vector& pos, const Vector& dir, ImagePtr image );
-	virtual ~EnemyGaruzakatoAttack( );
+	EnemyBossAttack( const Vector& pos, const Vector& dir, ImagePtr image );
+	virtual ~EnemyBossAttack( );
 private:
 	void act( );
 	void draw( int camera_x ) const;

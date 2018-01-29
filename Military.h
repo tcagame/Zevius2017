@@ -15,6 +15,8 @@ PTR( EnemyBragzakato );
 PTR( EnemyWall );
 PTR( EnemyToroid );
 PTR( EnemyBoss );
+PTR( EnemyBoss2 );
+PTR( EnemyBoss3 );
 PTR( EnemyExplosion );
 PTR( Armoury );
 PTR( Camera );
