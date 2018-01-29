@@ -46,5 +46,6 @@ private:
 	ImagePtr _medium;
 	ImagePtr _boss;
 	int _load_x;
+	int _boss_count;
 };
 

@@ -25,7 +25,8 @@ const int LOAD_RANGE_X = 2000;
 Military::Military( PlayerPtr player, CameraPtr camera ) :
 _load_x( 0 ),
 _player( player ),
-_camera( camera ) {
+_camera( camera ),
+_boss_count( 0 ) {
 	EnemyDataPtr enemy_data = EnemyDataPtr( new EnemyData0 );
 	_enemy_data = enemy_data->getEnemyData( );
 	DrawerPtr drawer = Drawer::getTask( );
@@ -43,7 +44,6 @@ Military::~Military( ) {
 void Military::update( ) {
 	loadEnemy( );
 	updateEnemy( );
-	Drawer::getTask( )->drawString( 0, 0, "%d", _enemies.size( ) );
 }
 
 void Military::loadEnemy( ) {
@@ -99,8 +99,16 @@ void Military::updateEnemy( ) {
 		if ( getOverLappedEnemy( _player ) != EnemyPtr( ) ) {
 			_player->setFinished( true );
 		}
+		if ( _boss_count >= 3 ) {
+			_player->setFinished( true );
+		}
 		if( enemy->isFinished( ) ) {
 			addExplosion( EnemyExplosionPtr( new EnemyExplosion( enemy->getPos( ), enemy->getSize( ) ) ) );
+			if ( std::dynamic_pointer_cast< EnemyBoss >( enemy ) ||
+				 std::dynamic_pointer_cast< EnemyBoss2 >( enemy ) ||
+				 std::dynamic_pointer_cast< EnemyBoss3 >( enemy ) ) {
+				_boss_count++;
+			}
 			ite = _enemies.erase( ite );
 			continue;
 		}

@@ -5,7 +5,7 @@
 const int ANIM_NUM = 4;
 
 EnemyGaruzakatoAttack::EnemyGaruzakatoAttack( const Vector& pos, const Vector& dir, ImagePtr image ) :
-Enemy( pos, SMALL_GRAPH_SIZE, 0, true ),
+Enemy( pos, SMALL_GRAPH_SIZE / 2, 0, true ),
 _image( image ),
 _pos( pos ),
 _dir( dir ),

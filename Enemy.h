@@ -10,8 +10,11 @@ public:
 	bool isAttackCharacter( );
 	virtual void erase( );
 	virtual int getSize( ) const;
+	virtual void deadBoss( );
+	bool isBossFinished( );
 private:
 	bool _erase;
 	bool _attack;
+	int _boss_finished;
 };
 

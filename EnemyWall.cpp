@@ -8,7 +8,7 @@ const Vector MOVE_SPEED( -1.5, 0 );
 const int HP = 90;
 
 EnemyWall::EnemyWall( const Vector& pos, ImagePtr medium ) :
-Enemy( pos, NORMAL_GRAPH_SIZE / 2, 0, false ),
+Enemy( pos, NORMAL_GRAPH_SIZE / 4, 0, false ),
 _count( 0 ),
 _image( medium ),
 _hp( HP ) {

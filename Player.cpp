@@ -23,7 +23,7 @@ const int ANIM_NUM = 6;
 PTR( Sound );
 
 Player::Player( ArmouryPtr armoury, CameraPtr camera ) :
-Character( START_POS, NORMAL_GRAPH_SIZE / 2 ),
+Character( START_POS, NORMAL_GRAPH_SIZE / 4 ),
 _armoury( armoury ),
 _camera( camera ),
 _game_over( false ) {
@@ -86,7 +86,6 @@ void Player::actOnMove( ) {
 		vec.y = SCREEN_HEIGHT - NORMAL_GRAPH_SIZE - pos.y;
 	}
 	
-	Drawer::getTask( )->drawString( 0, 100, "x:%lf y:%lf", pos.x, pos.y );
 	setVec( vec );
 }
 

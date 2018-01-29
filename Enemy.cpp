@@ -4,7 +4,8 @@
 Enemy::Enemy( const Vector& pos , double radius, int score, bool attack ) :
 Character( pos, radius ),
 _erase( false ),
-_attack( attack ) {
+_attack( attack ),
+_boss_finished( 3 ){
 }
 
 
@@ -26,3 +27,15 @@ int Enemy::getSize( ) const {
 bool Enemy::isAttackCharacter( ) {
 	return _attack;
 }
+
+void Enemy::deadBoss( ) {
+	_boss_finished--;
+}
+
+bool Enemy::isBossFinished( ) {
+	if ( _boss_finished == 0 ) {
+		return true;
+	}
+	return false;
+}
+

@@ -52,6 +52,7 @@ void EnemyBoss2::draw( int camera_x ) const {
 void EnemyBoss2::erase( ) {
 	_hp--;
 	if ( _hp <= 0 ) {
+		Enemy::deadBoss( );
 		Enemy::erase( );
 	}
 }
