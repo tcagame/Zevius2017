@@ -45,7 +45,7 @@ void EnemyGaruzakato::act( ) {
 			Matrix::makeTransformRotation( axis * -1, PI / 6 )
 		};
 		for ( int i = 0; i < 5; i++ ) {
-			_military->addEnemy( EnemyGaruzakatoAttackPtr( new EnemyGaruzakatoAttack( pos, rots[ i ].multiply( Vector( -5, 0 ) ), _attack_img ) ) );
+			_military->addEnemy( EnemyGaruzakatoAttackPtr( new EnemyGaruzakatoAttack( pos, rots[ i ].multiply( Vector( -8, 0 ) ), _attack_img ) ) );
 		}
 	}
 }

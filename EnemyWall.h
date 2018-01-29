@@ -11,8 +11,10 @@ public:
 private:
 	void act( );
 	void draw( int camera_x ) const;
+	void erase( );
 private:
 	ImagePtr _image;
 	int _count;
+	int _hp;
 };
 

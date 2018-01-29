@@ -7,7 +7,7 @@
 
 const int BOSS_GRAPH_SIZE = 96;
 const int ANIM_NUM = 7;
-const int HP = 10;
+const int HP = 20;
 const int MY_POSITION = 1000;
 
 const int ATTACK_TIME = 90;
